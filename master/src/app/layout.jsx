@@ -1,22 +1,18 @@
-import BootstrapInit from "@/helper/BootstrapInit";
-import RouteScrollToTop from "@/helper/RouteScrollToTop";
+import PluginInit from "@/helper/PluginInit";
 import "./font.css";
 import "./globals.scss";
-import PhosphorIconInit from "@/helper/PhosphorIconInit";
 
 export const metadata = {
-  title: "Digital Market Place NEXT Js Template",
+  title: "WowDash NEXT JS - Admin Dashboard Multipurpose Bootstrap 5 Template",
   description:
-    "DpMarket – Digital Products Marketplace NEXT JS Template – A versatile and meticulously designed set of templates crafted to elevate your Digital Products Marketplace content and experiences.",
+    "Wowdash NEXT JS is a developer-friendly, ready-to-use admin template designed for building attractive, scalable, and high-performing web applications.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body suppressHydrationWarning={true}>
-        <BootstrapInit />
-        <PhosphorIconInit />
-        <RouteScrollToTop />
+        <PluginInit />
         {children}
       </body>
     </html>

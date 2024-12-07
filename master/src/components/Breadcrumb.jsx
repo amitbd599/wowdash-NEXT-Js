@@ -1,29 +1,23 @@
 import React from "react";
-import Link from "next/link";
-
+import { Icon } from '@iconify/react';
+import { Link } from "react-router-dom";
 const Breadcrumb = ({ title }) => {
   return (
-    <div className='breadcrumb mb-0 py-26 bg-main-two-50'>
-      <div className='container container-lg'>
-        <div className='breadcrumb-wrapper flex-between flex-wrap gap-16'>
-          <h6 className='mb-0'>{title}</h6>
-          <ul className='flex-align gap-8 flex-wrap'>
-            <li className='text-sm'>
-              <Link
-                href='/'
-                className='text-gray-900 flex-align gap-8 hover-text-main-600'
-              >
-                <i className='ph ph-house' />
-                Home
-              </Link>
-            </li>
-            <li className='flex-align'>
-              <i className='ph ph-caret-right' />
-            </li>
-            <li className='text-sm text-main-600'> {title} </li>
-          </ul>
-        </div>
-      </div>
+    <div className="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
+      <h6 className="fw-semibold mb-0">Dashboard</h6>
+      <ul className="d-flex align-items-center gap-2">
+        <li className="fw-medium">
+          <Link
+            to="/index"
+            className="d-flex align-items-center gap-1 hover-text-primary"
+          >
+            <Icon icon="solar:home-smile-angle-outline" className="icon text-lg" />
+            Dashboard
+          </Link>
+        </li>
+        <li> - </li>
+        <li className="fw-medium">{title}</li>
+      </ul>
     </div>
   );
 };
