@@ -169,9 +169,9 @@ table.dataTable td.dt-type-date {
   gap: 12px;
 }
 
-.sidebar-menu .sidebar-submenu li > .active-page {
-  background-color: var(--button-secondary);
-  color: var(--text-primary-light);
+.sidebar-menu .sidebar-submenu li > a.active-page {
+  background-color: var(--button-secondary) !important;
+  color: var(--text-primary-light) !important;
 }
 
 .sidebar-menu li > a.active-page:hover {

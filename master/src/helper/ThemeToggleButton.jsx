@@ -1,27 +1,40 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
 
 const ThemeToggleButton = () => {
-  // 1. Initialize state for the current theme
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  // 1. State for the current theme, initialized to null before hydration
+  const [theme, setTheme] = useState(null);
 
   // 2. Function to update the theme on the HTML element
   const updateThemeOnHtmlEl = (theme) => {
-    document.documentElement.setAttribute("data-theme", theme);
+    if (typeof window !== "undefined") {
+      document.documentElement.setAttribute("data-theme", theme);
+    }
   };
 
-  // 4. On initial render, set the theme from localStorage
+  // 3. Load theme from localStorage after the component mounts
   useEffect(() => {
-    updateThemeOnHtmlEl(theme);
-  }, [theme]);
+    if (typeof window !== "undefined") {
+      const storedTheme = localStorage.getItem("theme") || "light";
+      setTheme(storedTheme);
+      updateThemeOnHtmlEl(storedTheme);
+    }
+  }, []);
 
-  // 5. Toggle theme when button is clicked
+  // 4. Toggle theme when button is clicked
   const handleThemeToggle = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    updateThemeOnHtmlEl(newTheme);
+
+    if (typeof window !== "undefined") {
+      localStorage.setItem("theme", newTheme);
+      updateThemeOnHtmlEl(newTheme);
+    }
   };
+
+  // 5. Render only after theme state is initialized
+  if (!theme) return null;
 
   return (
     <button

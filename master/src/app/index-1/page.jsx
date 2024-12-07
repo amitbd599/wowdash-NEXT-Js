@@ -1,3 +1,4 @@
+import DashBoardLayerOne from "@/components/DashBoardLayerOne";
 import MasterLayout from "@/masterLayout/MasterLayout";
 import { Breadcrumb } from "react-bootstrap";
 
@@ -10,7 +11,7 @@ const Page = () => {
         <Breadcrumb title='AI' />
 
         {/* DashBoardLayerOne */}
-        {/* <DashBoardLayerOne /> */}
+        <DashBoardLayerOne />
       </MasterLayout>
     </>
   );

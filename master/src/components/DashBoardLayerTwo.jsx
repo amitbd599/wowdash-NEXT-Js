@@ -1,47 +1,44 @@
-import React from 'react'
-import UnitCountTwo from './child/UnitCountTwo'
-import RevenueGrowthOne from './child/RevenueGrowthOne'
-import EarningStaticOne from './child/EarningStaticOne'
-import CampaignStaticOne from './child/CampaignStaticOne'
-import ClientPaymentOne from './child/ClientPaymentOne'
-import CountryStatusOne from './child/CountryStatusOne'
-import TopPerformanceOne from './child/TopperformanceOne'
-import LatestPerformanceOne from './child/LatestPerformanceOne'
-import LastTransactionOne from './child/LastTransactionOne'
+// import CampaignStaticOne from "./child/CampaignStaticOne";
+// import ClientPaymentOne from "./child/ClientPaymentOne";
+// // import CountryStatusOne from "./child/CountryStatusOne";
+// import EarningStaticOne from "./child/EarningStaticOne";
+// import LastTransactionOne from "./child/LastTransactionOne";
+// import LatestPerformanceOne from "./child/LatestPerformanceOne";
+// import RevenueGrowthOne from "./child/RevenueGrowthOne";
+// import TopPerformanceOne from "./child/TopperformanceOne";
+// import UnitCountTwo from "./child/UnitCountTwo";
 
 const DashBoardLayerTwo = () => {
   return (
-    <section className="row gy-4">
-
+    <section className='row gy-4'>
       {/* UnitCountTwo */}
-      <UnitCountTwo />
+      {/* <UnitCountTwo /> */}
 
       {/* RevenueGrowthOne */}
-      <RevenueGrowthOne />
+      {/* <RevenueGrowthOne /> */}
 
       {/* EarningStaticOne */}
-      <EarningStaticOne />
+      {/* <EarningStaticOne /> */}
 
       {/* CampaignStaticOne */}
-      <CampaignStaticOne />
+      {/* <CampaignStaticOne /> */}
 
       {/* ClientPaymentOne  */}
-      <ClientPaymentOne />
+      {/* <ClientPaymentOne /> */}
 
       {/* CountryStatusOne */}
-      <CountryStatusOne />
+      {/* <CountryStatusOne /> */}
 
       {/* TopPerformanceOne */}
-      <TopPerformanceOne />
+      {/* <TopPerformanceOne /> */}
 
       {/* LatestPerformanceOne */}
-      <LatestPerformanceOne />
+      {/* <LatestPerformanceOne /> */}
 
       {/* LastTransactionOne */}
-      <LastTransactionOne />
+      {/* <LastTransactionOne /> */}
     </section>
+  );
+};
 
-  )
-}
-
-export default DashBoardLayerTwo
+export default DashBoardLayerTwo;

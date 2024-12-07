@@ -6,6 +6,7 @@ import ThemeToggleButton from "../helper/ThemeToggleButton";
 import Link from "next/link";
 
 const MasterLayout = ({ children }) => {
+  let pathname = usePathname();
   let [sidebarActive, seSidebarActive] = useState(false);
   let [mobileMenu, setMobileMenu] = useState(false);
   const location = usePathname(); // Hook to get the current route
@@ -50,8 +51,8 @@ const MasterLayout = ({ children }) => {
         const submenuLinks = dropdown.querySelectorAll(".sidebar-submenu li a");
         submenuLinks.forEach((link) => {
           if (
-            link.getAttribute("href") === location.pathname ||
-            link.getAttribute("to") === location.pathname
+            link.getAttribute("href") === pathname ||
+            link.getAttribute("to") === pathname
           ) {
             dropdown.classList.add("open");
           }
@@ -129,10 +130,8 @@ const MasterLayout = ({ children }) => {
               <ul className='sidebar-submenu'>
                 <li>
                   <Link
-                    href='/index'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    href='/index-1'
+                    className={pathname === "/index-1" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />
                     AI
@@ -141,9 +140,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/index-2'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/index-2" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
                     CRM
@@ -152,9 +149,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/index-3'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/index-3" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
                     eCommerce
@@ -163,9 +158,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/index-4'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/index-4" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />
                     Cryptocurrency
@@ -174,9 +167,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/index-5'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/index-5" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-success-main w-auto' />{" "}
                     Investment
@@ -185,9 +176,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/index-6'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/index-6" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-purple w-auto' />{" "}
                     LMS
@@ -196,9 +185,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/index-7'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/index-7" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
                     NFT &amp; Gaming
@@ -211,7 +198,7 @@ const MasterLayout = ({ children }) => {
             <li>
               <Link
                 href='/email'
-                className={(navData) => (navData.isActive ? "active-page" : "")}
+                className={pathname === "/email" ? "active-page" : ""}
               >
                 <Icon icon='mage:email' className='menu-icon' />
                 <span>Email</span>
@@ -220,7 +207,7 @@ const MasterLayout = ({ children }) => {
             <li>
               <Link
                 href='/chat-message'
-                className={(navData) => (navData.isActive ? "active-page" : "")}
+                className={pathname === "/chat-message" ? "active-page" : ""}
               >
                 <Icon icon='bi:chat-dots' className='menu-icon' />
                 <span>Chat</span>
@@ -229,7 +216,7 @@ const MasterLayout = ({ children }) => {
             <li>
               <Link
                 href='/calendar-main'
-                className={(navData) => (navData.isActive ? "active-page" : "")}
+                className={pathname === "/calendar-main" ? "active-page" : ""}
               >
                 <Icon icon='solar:calendar-outline' className='menu-icon' />
                 <span>Calendar</span>
@@ -238,7 +225,7 @@ const MasterLayout = ({ children }) => {
             <li>
               <Link
                 href='/kanban'
-                className={(navData) => (navData.isActive ? "active-page" : "")}
+                className={pathname === "/kanban" ? "active-page" : ""}
               >
                 <Icon
                   icon='material-symbols:map-outline'
@@ -258,8 +245,8 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/invoice-list'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
+                    className={
+                      pathname === "/invoice-list" ? "active-page" : ""
                     }
                   >
                     <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />{" "}
@@ -269,8 +256,8 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/invoice-preview'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
+                    className={
+                      pathname === "/invoice-preview" ? "active-page" : ""
                     }
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />
@@ -280,9 +267,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/invoice-add'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/invoice-add" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
                     Add new
@@ -291,8 +276,8 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/invoice-edit'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
+                    className={
+                      pathname === "/invoice-edit" ? "active-page" : ""
                     }
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
@@ -313,8 +298,8 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/text-generator'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
+                    className={
+                      pathname === "/text-generator" ? "active-page" : ""
                     }
                   >
                     <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />{" "}
@@ -324,8 +309,8 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/code-generator'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
+                    className={
+                      pathname === "/code-generator" ? "active-page" : ""
                     }
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
@@ -335,8 +320,8 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/image-generator'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
+                    className={
+                      pathname === "/image-generator" ? "active-page" : ""
                     }
                   >
                     <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
@@ -346,8 +331,8 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/voice-generator'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
+                    className={
+                      pathname === "/voice-generator" ? "active-page" : ""
                     }
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
@@ -357,8 +342,8 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/video-generator'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
+                    className={
+                      pathname === "/video-generator" ? "active-page" : ""
                     }
                   >
                     <i className='ri-circle-fill circle-icon text-success-main w-auto' />{" "}
@@ -378,9 +363,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/wallet'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/wallet" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />{" "}
                     Wallet
@@ -389,9 +372,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/marketplace'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/marketplace" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />
                     Marketplace
@@ -400,8 +381,8 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/marketplace-details'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
+                    className={
+                      pathname === "/marketplace-details" ? "active-page" : ""
                     }
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />
@@ -411,9 +392,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/portfolio'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/portfolio" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />
                     Portfolios
@@ -437,9 +416,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/typography'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/typography" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />
                     Typography
@@ -448,9 +425,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/colors'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/colors" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
                     Colors
@@ -459,9 +434,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/button'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/button" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-success-main w-auto' />{" "}
                     Button
@@ -470,9 +443,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/dropdown'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/dropdown" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-lilac-600 w-auto' />{" "}
                     Dropdown
@@ -481,9 +452,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/alert'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/alert" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
                     Alerts
@@ -492,9 +461,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/card'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/card" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
                     Card
@@ -503,9 +470,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/carousel'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/carousel" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
                     Carousel
@@ -514,9 +479,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/avatar'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/avatar" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-success-main w-auto' />{" "}
                     Avatars
@@ -525,9 +488,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/progress'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/progress" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />{" "}
                     Progress bar
@@ -536,9 +497,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/tabs'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/tabs" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
                     Tab &amp; Accordion
@@ -547,9 +506,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/pagination'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/pagination" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />
                     Pagination
@@ -558,9 +515,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/badges'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/badges" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
                     Badges
@@ -569,9 +524,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/tooltip'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/tooltip" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-lilac-600 w-auto' />{" "}
                     Tooltip &amp; Popover
@@ -580,9 +533,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/videos'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/videos" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-cyan w-auto' />{" "}
                     Videos
@@ -591,9 +542,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/star-rating'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/star-rating" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-indigo w-auto' />{" "}
                     Star Ratings
@@ -602,9 +551,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/tags'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/tags" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-purple w-auto' />{" "}
                     Tags
@@ -613,9 +560,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/list'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/list" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-red w-auto' />{" "}
                     List
@@ -624,9 +569,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/calendar'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/calendar" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-yellow w-auto' />{" "}
                     Calendar
@@ -635,9 +578,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/radio'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/radio" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-orange w-auto' />{" "}
                     Radio
@@ -646,9 +587,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/switch'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/switch" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-pink w-auto' />{" "}
                     Switch
@@ -657,8 +596,8 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/image-upload'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
+                    className={
+                      pathname === "/image-upload" ? "active-page" : ""
                     }
                   >
                     <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />{" "}
@@ -678,9 +617,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/form'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/form" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />{" "}
                     Input Forms
@@ -689,9 +626,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/form-layout'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/form-layout" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
                     Input Layout
@@ -700,8 +635,8 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/form-validation'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
+                    className={
+                      pathname === "/form-validation" ? "active-page" : ""
                     }
                   >
                     <i className='ri-circle-fill circle-icon text-success-main w-auto' />{" "}
@@ -711,9 +646,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/wizard'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/wizard" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
                     Form Wizard
@@ -732,9 +665,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/table-basic'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/table-basic" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />{" "}
                     Basic Table
@@ -743,9 +674,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/table-data'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/table-data" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
                     Data Table
@@ -764,9 +693,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/line-chart'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/line-chart" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
                     Line Chart
@@ -775,8 +702,8 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/column-chart'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
+                    className={
+                      pathname === "/column-chart" ? "active-page" : ""
                     }
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
@@ -786,9 +713,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/pie-chart'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/pie-chart" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-success-main w-auto' />{" "}
                     Pie Chart
@@ -800,7 +725,7 @@ const MasterLayout = ({ children }) => {
             <li>
               <Link
                 href='/widgets'
-                className={(navData) => (navData.isActive ? "active-page" : "")}
+                className={pathname === "/widgets" ? "active-page" : ""}
               >
                 <Icon icon='fe:vector' className='menu-icon' />
                 <span>Widgets</span>
@@ -820,9 +745,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/users-list'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/users-list" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />{" "}
                     Users List
@@ -831,9 +754,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/users-grid'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/users-grid" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
                     Users Grid
@@ -842,9 +763,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/add-user'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/add-user" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
                     Add User
@@ -853,8 +772,8 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/view-profile'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
+                    className={
+                      pathname === "/view-profile" ? "active-page" : ""
                     }
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
@@ -874,9 +793,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/role-access'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/role-access" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />{" "}
                     Role &amp; Access
@@ -885,9 +802,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/assign-role'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/assign-role" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
                     Assign Role
@@ -908,9 +823,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/sign-in'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/sign-in" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />{" "}
                     Sign In
@@ -919,9 +832,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/sign-up'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/sign-up" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
                     Sign Up
@@ -930,8 +841,8 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/forgot-password'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
+                    className={
+                      pathname === "/forgot-password" ? "active-page" : ""
                     }
                   >
                     <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
@@ -944,7 +855,7 @@ const MasterLayout = ({ children }) => {
             <li>
               <Link
                 href='/gallery'
-                className={(navData) => (navData.isActive ? "active-page" : "")}
+                className={pathname === "/gallery" ? "active-page" : ""}
               >
                 <Icon icon='solar:gallery-wide-linear' className='menu-icon' />
                 <span>Gallery</span>
@@ -953,7 +864,7 @@ const MasterLayout = ({ children }) => {
             <li>
               <Link
                 href='/pricing'
-                className={(navData) => (navData.isActive ? "active-page" : "")}
+                className={pathname === "/pricing" ? "active-page" : ""}
               >
                 <Icon
                   icon='hugeicons:money-send-square'
@@ -965,7 +876,7 @@ const MasterLayout = ({ children }) => {
             <li>
               <Link
                 href='/faq'
-                className={(navData) => (navData.isActive ? "active-page" : "")}
+                className={pathname === "/faq" ? "active-page" : ""}
               >
                 <Icon
                   icon='mage:message-question-mark-round'
@@ -977,7 +888,7 @@ const MasterLayout = ({ children }) => {
             <li>
               <Link
                 href='/error'
-                className={(navData) => (navData.isActive ? "active-page" : "")}
+                className={pathname === "/error" ? "active-page" : ""}
               >
                 <Icon icon='streamline:straight-face' className='menu-icon' />
                 <span>404</span>
@@ -986,7 +897,7 @@ const MasterLayout = ({ children }) => {
             <li>
               <Link
                 href='/terms-condition'
-                className={(navData) => (navData.isActive ? "active-page" : "")}
+                className={pathname === "/terms-condition" ? "active-page" : ""}
               >
                 <Icon icon='octicon:info-24' className='menu-icon' />
                 <span>Terms &amp; Conditions</span>
@@ -1006,9 +917,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/company'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />{" "}
                     Company
@@ -1017,9 +926,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/notification'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
                     Notification
@@ -1028,9 +935,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/notification-alert'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
                     Notification Alert
@@ -1039,9 +944,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/theme'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
                     Theme
@@ -1050,9 +953,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/currencies'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
                     Currencies
@@ -1061,9 +962,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/language'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
                     Languages
@@ -1072,9 +971,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/payment-gateway'
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
+                    className={pathname === "/" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
                     Payment Gateway
