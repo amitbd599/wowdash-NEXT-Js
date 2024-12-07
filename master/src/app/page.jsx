@@ -1,4 +1,4 @@
-import DemoLayer from "@/components/DemoLayer";
+// import DemoLayer from "@/components/DemoLayer";
 
 export const metadata = {
   title: "WowDash NEXT JS - Admin Dashboard Multipurpose Bootstrap 5 Template",
@@ -7,11 +7,7 @@ export const metadata = {
 };
 
 const page = () => {
-  return (
-    <>
-      <DemoLayer />
-    </>
-  );
+  return <>{/* <DemoLayer /> */}ssss</>;
 };
 
 export default page;
