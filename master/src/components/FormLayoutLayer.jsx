@@ -1,28 +1,24 @@
-import React from 'react'
-import VerticalInputForm from './child/VerticalInputForm'
-import InputFormWithIcons from './child/InputFormWithIcons'
-import HorizontalInputForm from './child/HorizontalInputForm'
-import HorizontalInputFormWithIcons from './child/HorizontalInputFormWithIcons'
+import VerticalInputForm from "./child/VerticalInputForm";
+import InputFormWithIcons from "./child/InputFormWithIcons";
+import HorizontalInputForm from "./child/HorizontalInputForm";
+import HorizontalInputFormWithIcons from "./child/HorizontalInputFormWithIcons";
 
 const FormLayoutLayer = () => {
-    return (
-        <div className="row gy-4">
+  return (
+    <div className='row gy-4'>
+      {/* VerticalInputForm */}
+      <VerticalInputForm />
 
-            {/* VerticalInputForm */}
-            <VerticalInputForm />
+      {/* InputFormWithIcons */}
+      <InputFormWithIcons />
 
-            {/* InputFormWithIcons */}
-            <InputFormWithIcons />
+      {/* HorizontalInputForm */}
+      <HorizontalInputForm />
 
-            {/* HorizontalInputForm */}
-            <HorizontalInputForm />
+      {/* HorizontalInputFormWithIcons */}
+      <HorizontalInputFormWithIcons />
+    </div>
+  );
+};
 
-            {/* HorizontalInputFormWithIcons */}
-            <HorizontalInputFormWithIcons />
-
-        </div>
-
-    )
-}
-
-export default FormLayoutLayer
+export default FormLayoutLayer;
