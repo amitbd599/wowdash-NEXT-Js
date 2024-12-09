@@ -1,7 +1,10 @@
 "use client";
-import ReactApexChart from "react-apexcharts";
+import dynamic from "next/dynamic";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import useReactApexChart from "@/hook/useReactApexChart";
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
 
 const EarningStaticOne = () => {
   let { barChartSeriesTwo, barChartOptionsTwo } = useReactApexChart();

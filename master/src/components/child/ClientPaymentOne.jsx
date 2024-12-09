@@ -1,6 +1,9 @@
 "use client";
 import useReactApexChart from "@/hook/useReactApexChart";
-import ReactApexChart from "react-apexcharts";
+import dynamic from "next/dynamic";
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
 
 const ClientPaymentOne = () => {
   let { paymentStatusChartSeriesTwo, paymentStatusChartOptionsTwo } =
