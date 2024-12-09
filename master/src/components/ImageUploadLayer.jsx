@@ -1,28 +1,24 @@
-import React from 'react'
-import BasicUpload from './child/BasicUpload'
-import ImageUpload from './child/ImageUpload'
-import UploadWithImagePreview from './child/UploadWithImagePreview'
-import UploadWithImagePreviewList from './child/UploadWithImagePreviewList'
+import BasicUpload from "./child/BasicUpload";
+import ImageUpload from "./child/ImageUpload";
+import UploadWithImagePreview from "./child/UploadWithImagePreview";
+import UploadWithImagePreviewList from "./child/UploadWithImagePreviewList";
 
 const ImageUploadLayer = () => {
-    return (
-        <div className="row gy-4">
+  return (
+    <div className='row gy-4'>
+      {/* BasicUpload */}
+      <BasicUpload />
 
-            {/* BasicUpload */}
-            <BasicUpload />
+      {/* ImageUpload */}
+      <ImageUpload />
 
-            {/* ImageUpload */}
-            <ImageUpload />
+      {/* UploadWithImagePreview */}
+      <UploadWithImagePreview />
 
-            {/* UploadWithImagePreview */}
-            <UploadWithImagePreview />
+      {/* UploadWithImagePreviewList */}
+      <UploadWithImagePreviewList />
+    </div>
+  );
+};
 
-            {/* UploadWithImagePreviewList */}
-            <UploadWithImagePreviewList />
-
-        </div>
-
-    )
-}
-
-export default ImageUploadLayer
+export default ImageUploadLayer;

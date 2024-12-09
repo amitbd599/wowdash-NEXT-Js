@@ -1,5 +1,6 @@
+"use client";
 import { Icon } from '@iconify/react/dist/iconify.js'
-import React, { useState } from 'react'
+import  { useState } from 'react'
 
 const UploadWithImagePreview = () => {
     const [uploadedImages, setUploadedImages] = useState([]);
