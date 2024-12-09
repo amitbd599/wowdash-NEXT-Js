@@ -1,5 +1,5 @@
+import AddUserLayer from "@/components/AddUserLayer";
 import Breadcrumb from "@/components/Breadcrumb";
-import DashBoardLayerFive from "@/components/DashBoardLayerFive";
 import MasterLayout from "@/masterLayout/MasterLayout";
 
 export const metadata = {
@@ -14,10 +14,10 @@ const Page = () => {
       {/* MasterLayout */}
       <MasterLayout>
         {/* Breadcrumb */}
-        <Breadcrumb title='Investment' />
+        <Breadcrumb title='Add User' />
 
-        {/* DashBoardLayerFive */}
-        <DashBoardLayerFive />
+        {/* AddUserLayer */}
+        <AddUserLayer />
       </MasterLayout>
     </>
   );
