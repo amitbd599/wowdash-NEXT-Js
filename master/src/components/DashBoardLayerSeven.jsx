@@ -1,57 +1,50 @@
-import React from 'react'
-import BannerInnerOne from './child/BannerInnerOne'
-import TrendingBidsOne from './child/TrendingBidsOne'
-import TrendingNFTsOne from './child/TrendingNFTsOne'
-import RecentBidOne from './child/RecentBidOne'
-import ETHPriceOne from './child/ETHPriceOne'
-import StatisticsOne from './child/StatisticsOne'
-import FeaturedCreatorsOne from './child/FeaturedCreatorsOne'
-import FeaturedCreatorsTwo from './child/FeaturedCreatorsTwo'
-
+import BannerInnerOne from "./child/BannerInnerOne";
+import TrendingBidsOne from "./child/TrendingBidsOne";
+import TrendingNFTsOne from "./child/TrendingNFTsOne";
+import RecentBidOne from "./child/RecentBidOne";
+import ETHPriceOne from "./child/ETHPriceOne";
+import StatisticsOne from "./child/StatisticsOne";
+import FeaturedCreatorsOne from "./child/FeaturedCreatorsOne";
+import FeaturedCreatorsTwo from "./child/FeaturedCreatorsTwo";
 
 const DashBoardLayerSeven = () => {
-    return (
-        <>
-            <div className="row gy-4">
-                <div className="col-xxl-8">
-                    <div className="row gy-4">
+  return (
+    <>
+      <div className='row gy-4'>
+        <div className='col-xxl-8'>
+          <div className='row gy-4'>
+            {/* BannerInnerOne */}
+            <BannerInnerOne />
 
-                        {/* BannerInnerOne */}
-                        <BannerInnerOne />
+            {/* TrendingBidsOne */}
+            <TrendingBidsOne />
 
-                        {/* TrendingBidsOne */}
-                        <TrendingBidsOne />
+            {/* TrendingNFTsOne */}
+            <TrendingNFTsOne />
 
+            {/* RecentBidOne */}
+            <RecentBidOne />
+          </div>
+        </div>
 
-                        {/* TrendingNFTsOne */}
-                        <TrendingNFTsOne />
+        <div className='col-xxl-4'>
+          <div className='row gy-4'>
+            {/* ETHPriceOne */}
+            <ETHPriceOne />
 
-                        {/* RecentBidOne */}
-                        <RecentBidOne />
+            {/* StatisticsOne */}
+            <StatisticsOne />
 
-                    </div>
-                </div>
+            {/* FeaturedCreatorsOne */}
+            <FeaturedCreatorsOne />
 
-                <div className="col-xxl-4">
-                    <div className="row gy-4">
+            {/* FeaturedCreatorsTwo */}
+            <FeaturedCreatorsTwo />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
-                        {/* ETHPriceOne */}
-                        <ETHPriceOne />
-
-                        {/* StatisticsOne */}
-                        <StatisticsOne />
-
-                        {/* FeaturedCreatorsOne */}
-                        <FeaturedCreatorsOne />
-
-                        {/* FeaturedCreatorsTwo */}
-                        <FeaturedCreatorsTwo />
-
-                    </div>
-                </div>
-            </div>
-        </>
-    )
-}
-
-export default DashBoardLayerSeven
+export default DashBoardLayerSeven;
