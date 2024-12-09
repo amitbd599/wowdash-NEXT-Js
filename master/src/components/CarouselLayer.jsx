@@ -1,34 +1,28 @@
-import React from 'react';
-import DefaultCarousel from './child/DefaultCarousel';
-import CarouselWithArrows from './child/CarouselWithArrows';
-import CarouselWithPagination from './child/CarouselWithPagination';
-import CarouselWithProgress from './child/CarouselWithProgress';
-import MultipleSlides from './child/MultipleSlides';
-
+import DefaultCarousel from "./child/DefaultCarousel";
+import CarouselWithArrows from "./child/CarouselWithArrows";
+import CarouselWithPagination from "./child/CarouselWithPagination";
+import CarouselWithProgress from "./child/CarouselWithProgress";
+import MultipleSlides from "./child/MultipleSlides";
 
 const CarouselLayer = () => {
-    return (
-        <div className="row gy-4">
+  return (
+    <div className='row gy-4'>
+      {/* DefaultCarousel */}
+      <DefaultCarousel />
 
-            {/* DefaultCarousel */}
-            <DefaultCarousel />
+      {/* CarouselWithArrows */}
+      <CarouselWithArrows />
 
-            {/* CarouselWithArrows */}
-            <CarouselWithArrows />
+      {/* CarouselWithPagination */}
+      <CarouselWithPagination />
 
-            {/* CarouselWithPagination */}
-            <CarouselWithPagination />
+      {/* CarouselWithProgress */}
+      <CarouselWithProgress />
 
-            {/* CarouselWithProgress */}
-            <CarouselWithProgress />
-
-            {/* MultipleSlides */}
-            <MultipleSlides />
-
-        </div>
-
-
-    );
+      {/* MultipleSlides */}
+      <MultipleSlides />
+    </div>
+  );
 };
 
 export default CarouselLayer;
