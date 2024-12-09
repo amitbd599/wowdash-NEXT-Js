@@ -1,53 +1,46 @@
-import React from 'react'
-import UnitCountFour from './child/UnitCountFour'
-import RevenueStatisticsOne from './child/RevenueStatisticsOne'
-import SalesStatisticTwo from './child/SalesStatisticTwo'
-import TopCountriesTwo from './child/TopCountriesTwo'
-import UserActivatesTwo from './child/UserActivatesTwo'
-import LatestInvestmentsOne from './child/LatestInvestmentsOne'
-import NoticeBoardOne from './child/NoticeBoardOne'
-import TotalTransactionsOne from './child/TotalTransactionsOne'
-import ProjectStatusOne from './child/ProjectStatusOne'
+import UnitCountFour from "./child/UnitCountFour";
+import RevenueStatisticsOne from "./child/RevenueStatisticsOne";
+import SalesStatisticTwo from "./child/SalesStatisticTwo";
+import TopCountriesTwo from "./child/TopCountriesTwo";
+import UserActivatesTwo from "./child/UserActivatesTwo";
+import LatestInvestmentsOne from "./child/LatestInvestmentsOne";
+import NoticeBoardOne from "./child/NoticeBoardOne";
+import TotalTransactionsOne from "./child/TotalTransactionsOne";
+import ProjectStatusOne from "./child/ProjectStatusOne";
 
 const DashBoardLayerFive = () => {
-    return (
-        <>
-            <div className="row gy-4">
+  return (
+    <>
+      <div className='row gy-4'>
+        {/* UnitCountFour */}
+        <UnitCountFour />
 
-                {/* UnitCountFour */}
-                <UnitCountFour />
+        {/* RevenueStatisticsOne */}
+        <RevenueStatisticsOne />
 
-                {/* RevenueStatisticsOne */}
-                <RevenueStatisticsOne />
+        {/* SalesStatisticTwo */}
+        <SalesStatisticTwo />
 
+        {/* TopCountriesTwo */}
+        <TopCountriesTwo />
 
-                {/* SalesStatisticTwo */}
-                <SalesStatisticTwo />
+        {/* UserActivatesTwo */}
+        <UserActivatesTwo />
 
+        {/* LatestInvestmentsOne */}
+        <LatestInvestmentsOne />
 
-                {/* TopCountriesTwo */}
-                <TopCountriesTwo />
+        {/* NoticeBoardOne */}
+        <NoticeBoardOne />
 
+        {/* TotalTransactionsOne */}
+        <TotalTransactionsOne />
 
-                {/* UserActivatesTwo */}
-                <UserActivatesTwo />
+        {/* ProjectStatusOne */}
+        <ProjectStatusOne />
+      </div>
+    </>
+  );
+};
 
-
-                {/* LatestInvestmentsOne */}
-                <LatestInvestmentsOne />
-
-                {/* NoticeBoardOne */}
-                <NoticeBoardOne />
-
-                {/* TotalTransactionsOne */}
-                <TotalTransactionsOne />
-
-                {/* ProjectStatusOne */}
-                <ProjectStatusOne />
-            </div>
-
-        </>
-    )
-}
-
-export default DashBoardLayerFive
+export default DashBoardLayerFive;
