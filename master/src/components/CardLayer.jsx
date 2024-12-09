@@ -1,33 +1,32 @@
-import React from 'react'
-import DefaultCard from './child/DefaultCard'
-import CardTextIcon from './child/CardTextIcon'
-import CardWithImageOverlays from './child/CardWithImageOverlays'
-import CardHeaderFooter from './child/CardHeaderFooter'
-import HorizontalCard from './child/HorizontalCard'
-import CardWithBackgroundColor from './child/CardWithBackgroundColor'
+import DefaultCard from "./child/DefaultCard";
+import CardTextIcon from "./child/CardTextIcon";
+import CardWithImageOverlays from "./child/CardWithImageOverlays";
+import CardHeaderFooter from "./child/CardHeaderFooter";
+import HorizontalCard from "./child/HorizontalCard";
+import CardWithBackgroundColor from "./child/CardWithBackgroundColor";
 
 const CardLayer = () => {
-    return (
-        <>
-            {/* DefaultCard */}
-            <DefaultCard />
+  return (
+    <>
+      {/* DefaultCard */}
+      <DefaultCard />
 
-            {/* CardTextIcon */}
-            <CardTextIcon />
+      {/* CardTextIcon */}
+      <CardTextIcon />
 
-            {/* CardWithImageOverlays */}
-            <CardWithImageOverlays />
+      {/* CardWithImageOverlays */}
+      <CardWithImageOverlays />
 
-            {/* CardHeaderFooter */}
-            <CardHeaderFooter />
+      {/* CardHeaderFooter */}
+      <CardHeaderFooter />
 
-            {/* HorizontalCard */}
-            <HorizontalCard />
+      {/* HorizontalCard */}
+      <HorizontalCard />
 
-            {/* CardWithBackgroundColor */}
-            <CardWithBackgroundColor />
-        </>
-    )
-}
+      {/* CardWithBackgroundColor */}
+      <CardWithBackgroundColor />
+    </>
+  );
+};
 
-export default CardLayer
+export default CardLayer;
