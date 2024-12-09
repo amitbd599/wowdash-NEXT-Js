@@ -1,45 +1,36 @@
-import React from 'react'
-import DefaultAlerts from './child/DefaultAlerts'
-import OutlineAlerts from './child/OutlineAlerts'
-import SolidAlerts from './child/SolidAlerts'
-import OutlineAlertsTwo from './child/OutlineAlertsTwo'
-import LeftBorderAlerts from './child/LeftBorderAlerts'
-import DefaultAlertsTwo from './child/DefaultAlertsTwo'
-import DefaultAlertsThree from './child/DefaultAlertsThree'
+import DefaultAlerts from "./child/DefaultAlerts";
+import OutlineAlerts from "./child/OutlineAlerts";
+import SolidAlerts from "./child/SolidAlerts";
+import OutlineAlertsTwo from "./child/OutlineAlertsTwo";
+import LeftBorderAlerts from "./child/LeftBorderAlerts";
+import DefaultAlertsTwo from "./child/DefaultAlertsTwo";
+import DefaultAlertsThree from "./child/DefaultAlertsThree";
 
 const AlertLayer = () => {
-    return (
-        <div className="row gy-4">
+  return (
+    <div className='row gy-4'>
+      {/* DefaultAlerts */}
+      <DefaultAlerts />
 
-            {/* DefaultAlerts */}
-            <DefaultAlerts />
+      {/* OutlineAlerts */}
+      <OutlineAlerts />
 
-            {/* OutlineAlerts */}
-            <OutlineAlerts />
+      {/* SolidAlerts */}
+      <SolidAlerts />
 
+      {/* OutlineAlertsTwo */}
+      <OutlineAlertsTwo />
 
-            {/* SolidAlerts */}
-            <SolidAlerts />
+      {/* LeftBorderAlerts */}
+      <LeftBorderAlerts />
 
+      {/* DefaultAlertsTwo */}
+      <DefaultAlertsTwo />
 
-            {/* OutlineAlertsTwo */}
-            <OutlineAlertsTwo />
+      {/* DefaultAlertsThree */}
+      <DefaultAlertsThree />
+    </div>
+  );
+};
 
-
-            {/* LeftBorderAlerts */}
-            <LeftBorderAlerts />
-
-
-            {/* DefaultAlertsTwo */}
-            <DefaultAlertsTwo />
-
-
-            {/* DefaultAlertsThree */}
-            <DefaultAlertsThree />
-
-        </div>
-
-    )
-}
-
-export default AlertLayer
+export default AlertLayer;
