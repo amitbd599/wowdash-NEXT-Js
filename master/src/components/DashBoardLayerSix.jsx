@@ -1,41 +1,38 @@
-import React from 'react'
-import UnitCountFive from './child/UnitCountFive'
-import TrafficSourcesOne from './child/TrafficSourcesOne'
-import TopCategoriesOne from './child/TopCategoriesOne'
-import TopInstructorsOne from './child/TopInstructorsOne'
-import StudentProgressOne from './child/StudentProgressOne'
-import CoursesOne from './child/CoursesOne'
-import CourseActivityOne from './child/CourseActivityOne'
+import UnitCountFive from "./child/UnitCountFive";
+import TrafficSourcesOne from "./child/TrafficSourcesOne";
+import TopCategoriesOne from "./child/TopCategoriesOne";
+import TopInstructorsOne from "./child/TopInstructorsOne";
+import StudentProgressOne from "./child/StudentProgressOne";
+import CoursesOne from "./child/CoursesOne";
+import CourseActivityOne from "./child/CourseActivityOne";
 
 const DashBoardLayerSix = () => {
-    return (
-        <>
-            <div className="row gy-4 mb-24">
+  return (
+    <>
+      <div className='row gy-4 mb-24'>
+        {/* UnitCountFive */}
+        <UnitCountFive />
 
-                {/* UnitCountFive */}
-                <UnitCountFive />
+        {/* TrafficSourcesOne */}
+        <TrafficSourcesOne />
 
-                {/* TrafficSourcesOne */}
-                <TrafficSourcesOne />
+        {/* TopCategoriesOne */}
+        <TopCategoriesOne />
 
-                {/* TopCategoriesOne */}
-                <TopCategoriesOne />
+        {/* TopInstructorsOne */}
+        <TopInstructorsOne />
 
-                {/* TopInstructorsOne */}
-                <TopInstructorsOne />
+        {/* StudentProgressOne */}
+        <StudentProgressOne />
 
-                {/* StudentProgressOne */}
-                <StudentProgressOne />
+        {/* CoursesOne */}
+        <CoursesOne />
 
-                {/* CoursesOne */}
-                <CoursesOne />
+        {/* CourseActivityOne */}
+        <CourseActivityOne />
+      </div>
+    </>
+  );
+};
 
-                {/* CourseActivityOne */}
-                <CourseActivityOne />
-
-            </div>
-        </>
-    )
-}
-
-export default DashBoardLayerSix
+export default DashBoardLayerSix;
