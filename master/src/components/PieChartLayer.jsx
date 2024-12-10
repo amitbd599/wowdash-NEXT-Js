@@ -1,4 +1,3 @@
-import React from 'react'
 import BasicPieChart from './child/BasicPieChart'
 import DonutChart from './child/DonutChart'
 import RadarChart from './child/RadarChart'
