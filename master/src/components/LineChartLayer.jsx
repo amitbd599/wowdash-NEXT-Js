@@ -1,34 +1,32 @@
-import React from 'react'
-import DefaultLineChart from './child/DefaultLineChart'
-import ZoomAbleLineChart from './child/ZoomAbleLineChart'
-import LineDataLabel from './child/LineDataLabel'
-import DoubleLineChart from './child/DoubleLineChart'
-import StepLineChart from './child/StepLineChart'
-import GradientLineChart from './child/GradientLineChart'
+import DefaultLineChart from "./child/DefaultLineChart";
+import ZoomAbleLineChart from "./child/ZoomAbleLineChart";
+import LineDataLabel from "./child/LineDataLabel";
+import DoubleLineChart from "./child/DoubleLineChart";
+import StepLineChart from "./child/StepLineChart";
+import GradientLineChart from "./child/GradientLineChart";
 
 const LineChartLayer = () => {
-    return (
-        <div className="row gy-4">
-            {/* DefaultLineChart */}
-            <DefaultLineChart />
+  return (
+    <div className='row gy-4'>
+      {/* DefaultLineChart */}
+      <DefaultLineChart />
 
-            {/* ZoomAbleLineChart */}
-            <ZoomAbleLineChart />
+      {/* ZoomAbleLineChart */}
+      <ZoomAbleLineChart />
 
-            {/* LineDataLabel */}
-            <LineDataLabel />
+      {/* LineDataLabel */}
+      <LineDataLabel />
 
-            {/* DoubleLineChart */}
-            <DoubleLineChart />
+      {/* DoubleLineChart */}
+      <DoubleLineChart />
 
-            {/* StepLineChart */}
-            <StepLineChart />
+      {/* StepLineChart */}
+      <StepLineChart />
 
-            {/* GradientLineChart */}
-            <GradientLineChart />
-        </div>
+      {/* GradientLineChart */}
+      <GradientLineChart />
+    </div>
+  );
+};
 
-    )
-}
-
-export default LineChartLayer
+export default LineChartLayer;

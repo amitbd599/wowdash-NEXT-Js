@@ -1,23 +1,32 @@
-import React from 'react'
-import ReactApexChart from 'react-apexcharts'
-import useReactApexChart from '../../hook/useReactApexChart'
+"use client";
+
+import useReactApexChart from "../../hook/useReactApexChart";
+import dynamic from "next/dynamic";
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
 
 const ZoomAbleLineChart = () => {
-
-    let { zoomAbleLineChartSeries, zoomAbleLineChartOptions } = useReactApexChart()
-    return (
-        <div className="col-md-6">
-            <div className="card h-100 p-0">
-                <div className="card-header border-bottom bg-base py-16 px-24">
-                    <h6 className="text-lg fw-semibold mb-0">Zoomable Chart</h6>
-                </div>
-                <div className="card-body p-24">
-                    <ReactApexChart id="zoomAbleLineChart" options={zoomAbleLineChartOptions} series={zoomAbleLineChartSeries} type="area"
-                        height={264} />
-                </div>
-            </div>
+  let { zoomAbleLineChartSeries, zoomAbleLineChartOptions } =
+    useReactApexChart();
+  return (
+    <div className='col-md-6'>
+      <div className='card h-100 p-0'>
+        <div className='card-header border-bottom bg-base py-16 px-24'>
+          <h6 className='text-lg fw-semibold mb-0'>Zoomable Chart</h6>
         </div>
-    )
-}
+        <div className='card-body p-24'>
+          <ReactApexChart
+            id='zoomAbleLineChart'
+            options={zoomAbleLineChartOptions}
+            series={zoomAbleLineChartSeries}
+            type='area'
+            height={264}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default ZoomAbleLineChart
+export default ZoomAbleLineChart;
