@@ -1,5 +1,5 @@
 import Breadcrumb from "@/components/Breadcrumb";
-import ProgressLayer from "@/components/ProgressLayer";
+import RadioLayer from "@/components/RadioLayer";
 import MasterLayout from "@/masterLayout/MasterLayout";
 
 export const metadata = {
@@ -14,10 +14,10 @@ const Page = () => {
       {/* MasterLayout */}
       <MasterLayout>
         {/* Breadcrumb */}
-        <Breadcrumb title='Components / Progress Bar' />
+        <Breadcrumb title='Components / Radio' />
 
-        {/* ProgressLayer */}
-        <ProgressLayer />
+        {/* RadioLayer */}
+        <RadioLayer />
       </MasterLayout>
     </>
   );

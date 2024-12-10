@@ -1,4 +1,3 @@
-import React from 'react'
 import DefaultRadio from './child/DefaultRadio'
 import RadioDisable from './child/RadioDisable'
 import RadioWithButton from './child/RadioWithButton'
