@@ -1,41 +1,36 @@
-import React from 'react'
-import DefaultTable from './child/DefaultTable'
-import BorderedTables from './child/BorderedTables'
-import StripedRows from './child/StripedRows'
-import StripedRowsTwo from './child/StripedRowsTwo'
-import TablesBorderColors from './child/TablesBorderColors'
-import TablesBorderColorsTwo from './child/TablesBorderColorsTwo'
-import TablesBorderColorsThree from './child/TablesBorderColorsThree'
+import DefaultTable from "./child/DefaultTable";
+import BorderedTables from "./child/BorderedTables";
+import StripedRows from "./child/StripedRows";
+import StripedRowsTwo from "./child/StripedRowsTwo";
+import TablesBorderColors from "./child/TablesBorderColors";
+import TablesBorderColorsTwo from "./child/TablesBorderColorsTwo";
+import TablesBorderColorsThree from "./child/TablesBorderColorsThree";
 
 const TableBasicLayer = () => {
-    return (
-        <div className="row gy-4">
+  return (
+    <div className='row gy-4'>
+      {/* DefaultTable */}
+      <DefaultTable />
 
-            {/* DefaultTable */}
-            <DefaultTable />
+      {/* BorderedTables */}
+      <BorderedTables />
 
-            {/* BorderedTables */}
-            <BorderedTables />
+      {/* StripedRows */}
+      <StripedRows />
 
-            {/* StripedRows */}
-            <StripedRows />
+      {/* StripedRowsTwo */}
+      <StripedRowsTwo />
 
-            {/* StripedRowsTwo */}
-            <StripedRowsTwo />
+      {/* TablesBorderColors */}
+      <TablesBorderColors />
 
-            {/* TablesBorderColors */}
-            <TablesBorderColors />
+      {/* TablesBorderColorsTwo */}
+      <TablesBorderColorsTwo />
 
-            {/* TablesBorderColorsTwo */}
-            <TablesBorderColorsTwo />
+      {/* TablesBorderColorsThree */}
+      <TablesBorderColorsThree />
+    </div>
+  );
+};
 
-
-            {/* TablesBorderColorsThree */}
-            <TablesBorderColorsThree />
-
-        </div>
-
-    )
-}
-
-export default TableBasicLayer
+export default TableBasicLayer;
