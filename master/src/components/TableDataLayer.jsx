@@ -1,7 +1,6 @@
 "use client";
 import { useEffect } from "react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { Icon } from "@iconify/react/dist/iconify.js";
 const loadJQueryAndDataTables = async () => {
   const $ = (await import("jquery")).default;
