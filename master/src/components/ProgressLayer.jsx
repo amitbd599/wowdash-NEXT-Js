@@ -1,50 +1,44 @@
-import React from 'react'
-import DefaultProgress from './child/DefaultProgress'
-import ProgressWithMultipleColor from './child/ProgressWithMultipleColor'
-import ProgressWithRightLabel from './child/ProgressWithRightLabel'
-import StripedProgress from './child/StripedProgress'
-import AnimatedProgress from './child/AnimatedProgress'
-import GradientProgress from './child/GradientProgress'
-import GradientProgressTwo from './child/GradientProgressTwo'
-import GradientProgressThree from './child/GradientProgressThree'
-import ProgressCircle from './child/ProgressCircle'
+import DefaultProgress from "./child/DefaultProgress";
+import ProgressWithMultipleColor from "./child/ProgressWithMultipleColor";
+import ProgressWithRightLabel from "./child/ProgressWithRightLabel";
+import StripedProgress from "./child/StripedProgress";
+import AnimatedProgress from "./child/AnimatedProgress";
+import GradientProgress from "./child/GradientProgress";
+import GradientProgressTwo from "./child/GradientProgressTwo";
+import GradientProgressThree from "./child/GradientProgressThree";
+import ProgressCircle from "./child/ProgressCircle";
 
 const ProgressLayer = () => {
-    return (
-        <div className="row gy-4">
+  return (
+    <div className='row gy-4'>
+      {/* DefaultProgress */}
+      <DefaultProgress />
 
-            {/* DefaultProgress */}
-            <DefaultProgress />
+      {/* ProgressWithMultipleColor */}
+      <ProgressWithMultipleColor />
 
-            {/* ProgressWithMultipleColor */}
-            <ProgressWithMultipleColor />
+      {/* ProgressWithRightLabel */}
+      <ProgressWithRightLabel />
 
-            {/* ProgressWithRightLabel */}
-            <ProgressWithRightLabel />
+      {/* StripedProgress */}
+      <StripedProgress />
 
-            {/* StripedProgress */}
-            <StripedProgress />
+      {/* AnimatedProgress */}
+      <AnimatedProgress />
 
-            {/* AnimatedProgress */}
-            <AnimatedProgress />
+      {/* GradientProgress */}
+      <GradientProgress />
 
-            {/* GradientProgress */}
-            <GradientProgress />
+      {/* GradientProgressTwo */}
+      <GradientProgressTwo />
 
+      {/* GradientProgressThree */}
+      <GradientProgressThree />
 
-            {/* GradientProgressTwo */}
-            <GradientProgressTwo />
+      {/* ProgressCircle */}
+      <ProgressCircle />
+    </div>
+  );
+};
 
-
-            {/* GradientProgressThree */}
-            <GradientProgressThree />
-
-            {/* ProgressCircle */}
-            <ProgressCircle />
-
-        </div>
-
-    )
-}
-
-export default ProgressLayer
+export default ProgressLayer;
