@@ -1,4 +1,3 @@
-import React from 'react'
 import DefaultVideo from './child/DefaultVideo'
 import VideosWithContent from './child/VideosWithContent'
 import VideoContent from './child/VideoContent'
