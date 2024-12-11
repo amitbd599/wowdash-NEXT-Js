@@ -1,5 +1,10 @@
+"use client";
 import React, { useEffect } from 'react'
-import { Tooltip } from 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import dynamic from 'next/dynamic';
+const Tooltip = dynamic(() =>
+  import('bootstrap/dist/js/bootstrap.bundle.min.js').then((mod) => mod.Tooltip),
+  { ssr: false } // Ensure it only loads on the client side
+);
 
 const DefaultTooltipTwo = () => {
     useEffect(() => {

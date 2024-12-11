@@ -1,38 +1,31 @@
-import React from 'react'
-import DefaultTooltip from './child/DefaultTooltip';
-import DefaultTooltipTwo from './child/DefaultTooltipTwo';
-import DefaultTooltipThree from './child/DefaultTooltipThree';
-import TooltipPopoverPositions from './child/TooltipPopoverPositions';
-import TooltipTextPopup from './child/TooltipTextPopup';
-import TooltipTextWithIconPopup from './child/TooltipTextWithIconPopup';
+import DefaultTooltip from "./child/DefaultTooltip";
+import DefaultTooltipTwo from "./child/DefaultTooltipTwo";
+import DefaultTooltipThree from "./child/DefaultTooltipThree";
+import TooltipPopoverPositions from "./child/TooltipPopoverPositions";
+import TooltipTextPopup from "./child/TooltipTextPopup";
+import TooltipTextWithIconPopup from "./child/TooltipTextWithIconPopup";
 const TooltipLayer = () => {
+  return (
+    <div className='row gy-4'>
+      {/* DefaultTooltip */}
+      <DefaultTooltip />
 
+      {/* DefaultTooltipTwo */}
+      <DefaultTooltipTwo />
 
-    return (
-        <div className="row gy-4">
+      {/* DefaultTooltipThree */}
+      <DefaultTooltipThree />
 
-            {/* DefaultTooltip */}
-            <DefaultTooltip />
+      {/* TooltipPopoverPositions */}
+      <TooltipPopoverPositions />
 
-            {/* DefaultTooltipTwo */}
-            <DefaultTooltipTwo />
+      {/* TooltipTextPopup */}
+      <TooltipTextPopup />
 
-            {/* DefaultTooltipThree */}
-            <DefaultTooltipThree />
+      {/* TooltipTextWithIconPopup */}
+      <TooltipTextWithIconPopup />
+    </div>
+  );
+};
 
-
-            {/* TooltipPopoverPositions */}
-            <TooltipPopoverPositions />
-
-            {/* TooltipTextPopup */}
-            <TooltipTextPopup />
-
-            {/* TooltipTextWithIconPopup */}
-            <TooltipTextWithIconPopup />
-
-        </div>
-
-    )
-}
-
-export default TooltipLayer
+export default TooltipLayer;
