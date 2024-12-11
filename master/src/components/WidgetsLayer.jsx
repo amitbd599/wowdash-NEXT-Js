@@ -1,44 +1,41 @@
-import React from 'react'
-import Metrics from './child/Metrics'
-import SalesStatisticOne from './child/SalesStatisticOne'
-import TopCountries from './child/TopCountries'
-import ClientPaymentOne from './child/ClientPaymentOne'
-import EarningStaticOne from './child/EarningStaticOne'
-import TotalTransactionsOne from './child/TotalTransactionsOne'
-import SalesStatisticTwo from './child/SalesStatisticTwo'
-import UsersOverviewTwo from './child/UsersOverviewTwo'
+import Metrics from "./child/Metrics";
+import SalesStatisticOne from "./child/SalesStatisticOne";
+import TopCountries from "./child/TopCountries";
+import ClientPaymentOne from "./child/ClientPaymentOne";
+import EarningStaticOne from "./child/EarningStaticOne";
+import TotalTransactionsOne from "./child/TotalTransactionsOne";
+import SalesStatisticTwo from "./child/SalesStatisticTwo";
+import UsersOverviewTwo from "./child/UsersOverviewTwo";
 
 const WidgetsLayer = () => {
-    return (
-        <>
-            {/* Metrics */}
-            <Metrics />
-            <div className="row gy-4 mt-1">
+  return (
+    <>
+      {/* Metrics */}
+      <Metrics />
+      <div className='row gy-4 mt-1'>
+        {/* SalesStatisticOne */}
+        <SalesStatisticOne />
 
-                {/* SalesStatisticOne */}
-                <SalesStatisticOne />
+        {/* TopCountries */}
+        <TopCountries />
 
-                {/* TopCountries */}
-                <TopCountries />
+        {/* ClientPaymentOne */}
+        <ClientPaymentOne />
 
-                {/* ClientPaymentOne */}
-                <ClientPaymentOne />
+        {/* EarningStaticOne */}
+        <EarningStaticOne />
 
-                {/* EarningStaticOne */}
-                <EarningStaticOne />
+        {/* UsersOverviewOne */}
+        <UsersOverviewTwo />
 
-                {/* UsersOverviewOne */}
-                <UsersOverviewTwo />
+        {/* TotalTransactionsOne */}
+        <TotalTransactionsOne />
 
-                {/* TotalTransactionsOne */}
-                <TotalTransactionsOne />
+        {/* SalesStatisticTwo */}
+        <SalesStatisticTwo />
+      </div>
+    </>
+  );
+};
 
-                {/* SalesStatisticTwo */}
-                <SalesStatisticTwo />
-            </div>
-        </>
-
-    )
-}
-
-export default WidgetsLayer
+export default WidgetsLayer;
