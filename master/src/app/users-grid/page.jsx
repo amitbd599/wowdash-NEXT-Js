@@ -1,5 +1,5 @@
 import Breadcrumb from "@/components/Breadcrumb";
-import TypographyLayer from "@/components/TypographyLayer";
+import UsersGridLayer from "@/components/UsersGridLayer";
 import MasterLayout from "@/masterLayout/MasterLayout";
 
 export const metadata = {
@@ -14,10 +14,10 @@ const Page = () => {
       {/* MasterLayout */}
       <MasterLayout>
         {/* Breadcrumb */}
-        <Breadcrumb title='Components / Typography' />
+        <Breadcrumb title='Users Grid' />
 
-        {/* TypographyLayer */}
-        <TypographyLayer />
+        {/* UsersGridLayer */}
+        <UsersGridLayer />
       </MasterLayout>
     </>
   );
