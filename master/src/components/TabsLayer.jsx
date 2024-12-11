@@ -1,4 +1,3 @@
-import React from 'react'
 import DefaultTabs from './child/DefaultTabs'
 import FocusTabs from './child/FocusTabs'
 import ButtonTabs from './child/ButtonTabs'
