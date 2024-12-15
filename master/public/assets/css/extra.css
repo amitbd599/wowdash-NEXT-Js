@@ -1,3 +1,9 @@
+*,
+::before,
+::after {
+  transition: none;
+}
+
 .jvm-zoom-btn.jvm-zoomin,
 .jvm-zoom-btn.jvm-zoomout {
   top: 10px;

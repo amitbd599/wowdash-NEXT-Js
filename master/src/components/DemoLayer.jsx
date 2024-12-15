@@ -6781,7 +6781,7 @@ font-size: 52px !important;
             <i className='ri-close-fill'></i>
           </button>
           <div className='mobile-menu__inner'>
-            <Link href='/index' className='mobile-menu__logo'>
+            <Link href='/index-1' className='mobile-menu__logo'>
               <img src='assets_demo/images/logo/logo.png' alt='Logo' />
             </Link>
             <div className='mobile-menu__menu'>
@@ -6840,7 +6840,7 @@ font-size: 52px !important;
             <nav className='header-inner flex-between'>
               {/* Logo */}
               <div className='logo'>
-                <Link href='/index' className='link'>
+                <Link href='/index-1' className='link'>
                   <img src='assets_demo/images/logo/logo.png' alt='Logo' />
                 </Link>
               </div>
@@ -7316,7 +7316,7 @@ font-size: 52px !important;
                             alt=''
                           />
                           <div className='demo-item__overlay'>
-                            <Link href='/index' className='btn btn-main btn-sm'>
+                            <Link href='/index-1' className='btn btn-main btn-sm'>
                               View Demo
                             </Link>
                           </div>
@@ -7324,7 +7324,7 @@ font-size: 52px !important;
                       </div>
                       <div className='text-center'>
                         <Link
-                          href='/index'
+                          href='/index-1'
                           className='text-heading fw-medium text-lg mt-12 hover-text-main-600'
                         >
                           AI Dashboard

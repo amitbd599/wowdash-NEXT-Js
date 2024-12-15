@@ -1,36 +1,41 @@
 "use client";
 import React, { useEffect } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import dynamic from "next/dynamic";
-const Tooltip = dynamic(
-  () =>
-    import("bootstrap/dist/js/bootstrap.bundle.min.js").then(
-      (mod) => mod.Tooltip
-    ),
-  { ssr: false } // Ensure it only loads on the client side
-);
 
 const TooltipTextWithIconPopup = () => {
   useEffect(() => {
-    // Select all elements with the class 'tooltip-buttonThree '
-    const tooltipButtons = document.querySelectorAll(".tooltip-buttonThree");
+    // Ensure the code runs only in the browser
+    if (typeof window !== "undefined") {
+      // Dynamically import Tooltip to avoid SSR issues
+      import("bootstrap/dist/js/bootstrap.bundle.min.js").then(
+        ({ Tooltip }) => {
+          // Select all elements with the class 'tooltip-buttonThree '
+          const tooltipButtons = document.querySelectorAll(
+            ".tooltip-buttonThree"
+          );
 
-    // Initialize a tooltip for each button
-    const tooltipInstances = Array.from(tooltipButtons).map((tooltipButton) => {
-      const tooltipContent = tooltipButton.nextElementSibling.innerHTML;
+          // Initialize a tooltip for each button
+          const tooltipInstances = Array.from(tooltipButtons).map(
+            (tooltipButton) => {
+              const tooltipContent = tooltipButton.nextElementSibling.innerHTML;
 
-      return new Tooltip(tooltipButton, {
-        title: tooltipContent,
-        trigger: "hover",
-        html: true,
-        customClass: tooltipButton.getAttribute("data-bs-custom-class") || "",
-      });
-    });
+              return new Tooltip(tooltipButton, {
+                title: tooltipContent,
+                trigger: "hover",
+                html: true,
+                customClass:
+                  tooltipButton.getAttribute("data-bs-custom-class") || "",
+              });
+            }
+          );
 
-    // Cleanup tooltips when the component unmounts
-    return () => {
-      tooltipInstances.forEach((tooltip) => tooltip.dispose());
-    };
+          // Cleanup tooltips on unmount
+          return () => {
+            tooltipInstances.forEach((tooltip) => tooltip.dispose());
+          };
+        }
+      );
+    }
   }, []);
   return (
     <div className='col-lg-6'>

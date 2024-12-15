@@ -1,28 +1,27 @@
 "use client";
 import React, { useEffect } from "react";
-import dynamic from "next/dynamic";
-const Tooltip = dynamic(
-  () =>
-    import("bootstrap/dist/js/bootstrap.bundle.min.js").then(
-      (mod) => mod.Tooltip
-    ),
-  { ssr: false } // Ensure it only loads on the client side
-);
 
 const DefaultTooltipThree = () => {
   useEffect(() => {
-    // Select all elements with data-bs-toggle="DefaultTooltipThree"
-    const tooltipTriggerList = document.querySelectorAll(
-      '[data-bs-toggle="DefaultTooltipThree"]'
-    );
-    // Initialize tooltips
-    const tooltipList = Array.from(tooltipTriggerList).map(
-      (tooltipTriggerEl) => new Tooltip(tooltipTriggerEl)
-    );
-    // Cleanup on unmount
-    return () => {
-      tooltipList.forEach((tooltip) => tooltip.dispose());
-    };
+    // Ensure the code runs only in the browser
+    if (typeof window !== "undefined") {
+      // Dynamically import Tooltip to avoid SSR issues
+      import("bootstrap/dist/js/bootstrap.bundle.min.js").then(
+        ({ Tooltip }) => {
+          const tooltipTriggerList = document.querySelectorAll(
+            '[data-bs-toggle="DefaultTooltipThree"]'
+          );
+          const tooltipList = [...tooltipTriggerList].map(
+            (tooltipTriggerEl) => new Tooltip(tooltipTriggerEl)
+          );
+
+          // Cleanup tooltips on unmount
+          return () => {
+            tooltipList.forEach((tooltip) => tooltip.dispose());
+          };
+        }
+      );
+    }
   }, []);
   return (
     <div className='col-lg-6'>

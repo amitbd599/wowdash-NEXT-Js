@@ -99,7 +99,7 @@ const MasterLayout = ({ children }) => {
           <Icon icon='radix-icons:cross-2' />
         </button>
         <div>
-          <Link href='/index' className='sidebar-logo'>
+          <Link href='/index-1' className='sidebar-logo'>
             <img
               src='assets/images/logo.png'
               alt='site logo'
