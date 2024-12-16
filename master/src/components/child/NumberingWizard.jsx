@@ -1,6 +1,21 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
 const NumberingWizard = () => {
+  const [currentStep, setCurrentStep] = useState(1);
+
+  const nextStep = () => {
+    if (currentStep < 5) {
+      setCurrentStep(currentStep + 1);
+    }
+  };
+
+  const prevStep = () => {
+    if (currentStep > 1) {
+      setCurrentStep(currentStep - 1);
+    }
+  };
+
   return (
     <div className='col-md-6'>
       <div className='card'>
@@ -14,34 +29,56 @@ const NumberingWizard = () => {
             <form>
               <div className='form-wizard-header overflow-x-auto scroll-sm pb-8 my-32'>
                 <ul className='list-unstyled form-wizard-list'>
-                  <li className='form-wizard-list__item active'>
+                  <li
+                    className={`form-wizard-list__item
+                      ${[2, 3, 4, 5].includes(currentStep) && "activated"}
+                    ${currentStep === 1 && "active"} `}
+                  >
                     <div className='form-wizard-list__line'>
                       <span className='count'>1</span>
                     </div>
                   </li>
-                  <li className='form-wizard-list__item'>
+                  <li
+                    className={`form-wizard-list__item
+                      ${[3, 4, 5].includes(currentStep) && "activated"}
+                      ${currentStep === 2 && "active"} `}
+                  >
                     <div className='form-wizard-list__line'>
                       <span className='count'>2</span>
                     </div>
                   </li>
-                  <li className='form-wizard-list__item'>
+                  <li
+                    className={`form-wizard-list__item
+                      ${[4, 5].includes(currentStep) && "activated"}
+                      ${currentStep === 3 && "active"} `}
+                  >
                     <div className='form-wizard-list__line'>
                       <span className='count'>3</span>
                     </div>
                   </li>
-                  <li className='form-wizard-list__item'>
+                  <li
+                    className={`form-wizard-list__item
+                      ${[5].includes(currentStep) && "activated"}
+                      ${currentStep === 4 && "active"} `}
+                  >
                     <div className='form-wizard-list__line'>
                       <span className='count'>4</span>
                     </div>
                   </li>
-                  <li className='form-wizard-list__item'>
+                  <li
+                    className={`form-wizard-list__item ${
+                      currentStep === 5 && "active"
+                    } `}
+                  >
                     <div className='form-wizard-list__line'>
                       <span className='count'>5</span>
                     </div>
                   </li>
                 </ul>
               </div>
-              <fieldset className='wizard-fieldset show'>
+              <fieldset
+                className={`wizard-fieldset ${currentStep === 1 && "show"} `}
+              >
                 <h6 className='text-md text-neutral-500'>
                   Personal Information
                 </h6>
@@ -53,7 +90,7 @@ const NumberingWizard = () => {
                         type='text'
                         className='form-control wizard-required'
                         placeholder='Enter First Name'
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
@@ -65,7 +102,7 @@ const NumberingWizard = () => {
                         type='text'
                         className='form-control wizard-required'
                         placeholder='Enter Last Name'
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
@@ -77,7 +114,7 @@ const NumberingWizard = () => {
                         type='email'
                         className='form-control wizard-required'
                         placeholder='Enter Email'
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
@@ -89,7 +126,7 @@ const NumberingWizard = () => {
                         type='password'
                         className='form-control wizard-required'
                         placeholder='Enter Password'
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
@@ -101,13 +138,14 @@ const NumberingWizard = () => {
                         type='password'
                         className='form-control wizard-required'
                         placeholder='Enter Confirm Password'
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
                   </div>
                   <div className='form-group text-end'>
                     <button
+                      onClick={nextStep}
                       type='button'
                       className='form-wizard-next-btn btn btn-primary-600 px-32'
                     >
@@ -116,7 +154,9 @@ const NumberingWizard = () => {
                   </div>
                 </div>
               </fieldset>
-              <fieldset className='wizard-fieldset '>
+              <fieldset
+                className={`wizard-fieldset ${currentStep === 2 && "show"} `}
+              >
                 <h6 className='text-md text-neutral-500'>
                   Account Information
                 </h6>
@@ -128,7 +168,7 @@ const NumberingWizard = () => {
                         type='text'
                         className='form-control wizard-required'
                         placeholder='Enter User Name'
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
@@ -140,7 +180,7 @@ const NumberingWizard = () => {
                         type='number'
                         className='form-control wizard-required'
                         placeholder='Enter Card Number '
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
@@ -154,7 +194,7 @@ const NumberingWizard = () => {
                         type='number'
                         className='form-control wizard-required'
                         placeholder='Enter Card Expiration'
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
@@ -166,7 +206,7 @@ const NumberingWizard = () => {
                         type='number'
                         className='form-control wizard-required'
                         placeholder='CVV Number'
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
@@ -178,19 +218,21 @@ const NumberingWizard = () => {
                         type='password'
                         className='form-control wizard-required'
                         placeholder='Enter Password'
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
                   </div>
                   <div className='form-group d-flex align-items-center justify-content-end gap-8'>
                     <button
+                      onClick={prevStep}
                       type='button'
                       className='form-wizard-previous-btn btn btn-neutral-500 border-neutral-100 px-32'
                     >
                       Back
                     </button>
                     <button
+                      onClick={nextStep}
                       type='button'
                       className='form-wizard-next-btn btn btn-primary-600 px-32'
                     >
@@ -199,7 +241,9 @@ const NumberingWizard = () => {
                   </div>
                 </div>
               </fieldset>
-              <fieldset className='wizard-fieldset'>
+              <fieldset
+                className={`wizard-fieldset ${currentStep === 3 && "show"} `}
+              >
                 <h6 className='text-md text-neutral-500'>Bank Information</h6>
                 <div className='row gy-3'>
                   <div className='col-sm-6'>
@@ -209,7 +253,7 @@ const NumberingWizard = () => {
                         type='text'
                         className='form-control wizard-required'
                         placeholder='Enter Bank Name'
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
@@ -221,7 +265,7 @@ const NumberingWizard = () => {
                         type='text'
                         className='form-control wizard-required'
                         placeholder='Enter Branch Name'
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
@@ -233,7 +277,7 @@ const NumberingWizard = () => {
                         type='text'
                         className='form-control wizard-required'
                         placeholder='Enter Account Name'
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
@@ -245,19 +289,21 @@ const NumberingWizard = () => {
                         type='number'
                         className='form-control wizard-required'
                         placeholder='Enter Account Number'
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
                   </div>
                   <div className='form-group d-flex align-items-center justify-content-end gap-8'>
                     <button
+                      onClick={prevStep}
                       type='button'
                       className='form-wizard-previous-btn btn btn-neutral-500 border-neutral-100 px-32'
                     >
                       Back
                     </button>
                     <button
+                      onClick={nextStep}
                       type='button'
                       className='form-wizard-next-btn btn btn-primary-600 px-32'
                     >
@@ -266,7 +312,9 @@ const NumberingWizard = () => {
                   </div>
                 </div>
               </fieldset>
-              <fieldset className='wizard-fieldset'>
+              <fieldset
+                className={`wizard-fieldset ${currentStep === 4 && "show"} `}
+              >
                 <h6 className='text-md text-neutral-500'>
                   Payment Information
                 </h6>
@@ -278,7 +326,7 @@ const NumberingWizard = () => {
                         type='text'
                         className='form-control wizard-required'
                         placeholder='Enter Holder Name'
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
@@ -290,7 +338,7 @@ const NumberingWizard = () => {
                         type='number'
                         className='form-control wizard-required'
                         placeholder='Enter Card Number'
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
@@ -302,7 +350,7 @@ const NumberingWizard = () => {
                         type='number'
                         className='form-control wizard-required'
                         placeholder='CVC Number'
-                        required=''
+                        required
                       />
                       <div className='wizard-form-error' />
                     </div>
@@ -399,12 +447,14 @@ const NumberingWizard = () => {
                   </div>
                   <div className='form-group d-flex align-items-center justify-content-end gap-8'>
                     <button
+                      onClick={prevStep}
                       type='button'
                       className='form-wizard-previous-btn btn btn-neutral-500 border-neutral-100 px-32'
                     >
                       Back
                     </button>
                     <button
+                      onClick={nextStep}
                       type='button'
                       className='form-wizard-next-btn btn btn-primary-600 px-32'
                     >
@@ -413,7 +463,9 @@ const NumberingWizard = () => {
                   </div>
                 </div>
               </fieldset>
-              <fieldset className='wizard-fieldset'>
+              <fieldset
+                className={`wizard-fieldset ${currentStep === 5 && "show"} `}
+              >
                 <div className='text-center mb-40'>
                   <img
                     src='assets/images/gif/success-img3.gif'
@@ -427,12 +479,14 @@ const NumberingWizard = () => {
                 </div>
                 <div className='form-group d-flex align-items-center justify-content-end gap-8'>
                   <button
+                    onClick={prevStep}
                     type='button'
                     className='form-wizard-previous-btn btn btn-neutral-500 border-neutral-100 px-32'
                   >
                     Back
                   </button>
                   <button
+                    onClick={nextStep}
                     type='button'
                     className='form-wizard-submit btn btn-primary-600 px-32'
                   >

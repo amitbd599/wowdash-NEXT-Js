@@ -6664,7 +6664,7 @@ font-size: 52px !important;
       {
         breakpoint: 424,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           arrows: false,
         },
       },
@@ -6819,7 +6819,7 @@ font-size: 52px !important;
                     onClick={closeMobileMenu}
                     className='nav-menu__link'
                   >
-                    Documentation
+                    UI Elements
                   </a>
                 </li>
               </ul>
@@ -6868,7 +6868,7 @@ font-size: 52px !important;
                   </li>
                   <li className='nav-menu__item'>
                     <a href='#documentation' className='nav-menu__link'>
-                      Documentation
+                      UI Elements
                     </a>
                   </li>
                 </ul>
@@ -7316,7 +7316,10 @@ font-size: 52px !important;
                             alt=''
                           />
                           <div className='demo-item__overlay'>
-                            <Link href='/index-1' className='btn btn-main btn-sm'>
+                            <Link
+                              href='/index-1'
+                              className='btn btn-main btn-sm'
+                            >
                               View Demo
                             </Link>
                           </div>

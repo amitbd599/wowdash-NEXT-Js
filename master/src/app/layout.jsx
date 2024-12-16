@@ -1,6 +1,6 @@
 import PluginInit from "@/helper/PluginInit";
 import "./font.css";
-import "./globals.scss";
+import "./globals.css";
 
 export const metadata = {
   title: "WowDash NEXT JS - Admin Dashboard Multipurpose Bootstrap 5 Template",
