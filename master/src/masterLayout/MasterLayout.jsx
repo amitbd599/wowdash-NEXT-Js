@@ -13,7 +13,7 @@ const MasterLayout = ({ children }) => {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    // Function to handle dropdown clicks
+
     const handleDropdownClick = (event) => {
       event.preventDefault();
       const clickedLink = event.currentTarget;
@@ -27,11 +27,19 @@ const MasterLayout = ({ children }) => {
       const allDropdowns = document.querySelectorAll(".sidebar-menu .dropdown");
       allDropdowns.forEach((dropdown) => {
         dropdown.classList.remove("open");
+        const submenu = dropdown.querySelector(".sidebar-submenu");
+        if (submenu) {
+          submenu.style.maxHeight = "0px"; // Collapse submenu
+        }
       });
 
       // Toggle the clicked dropdown
       if (!isActive) {
         clickedDropdown.classList.add("open");
+        const submenu = clickedDropdown.querySelector(".sidebar-submenu");
+        if (submenu) {
+          submenu.style.maxHeight = `${submenu.scrollHeight}px`; // Expand submenu
+        }
       }
     };
 
@@ -44,23 +52,26 @@ const MasterLayout = ({ children }) => {
       trigger.addEventListener("click", handleDropdownClick);
     });
 
-    // Function to open submenu based on current route
     const openActiveDropdown = () => {
       const allDropdowns = document.querySelectorAll(".sidebar-menu .dropdown");
       allDropdowns.forEach((dropdown) => {
         const submenuLinks = dropdown.querySelectorAll(".sidebar-submenu li a");
         submenuLinks.forEach((link) => {
           if (
-            link.getAttribute("href") === pathname ||
-            link.getAttribute("to") === pathname
+            link.getAttribute("href") === location ||
+            link.getAttribute("to") === location
           ) {
             dropdown.classList.add("open");
+            const submenu = dropdown.querySelector(".sidebar-submenu");
+            if (submenu) {
+              submenu.style.maxHeight = `${submenu.scrollHeight}px`; // Expand submenu
+            }
           }
         });
       });
     };
 
-    // Open the submenu that contains the open route
+    // Open the submenu that contains the active route
     openActiveDropdown();
 
     // Cleanup event listeners on unmount
@@ -189,6 +200,42 @@ const MasterLayout = ({ children }) => {
                   >
                     <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
                     NFT &amp; Gaming
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-8'
+                    className={pathname === "/index-8" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
+                    Medical
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-9'
+                    className={pathname === "/index-9" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
+                    Analytics
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-10'
+                    className={pathname === "/index-10" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
+                    POS & Inventory
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-11'
+                    className={pathname === "/index-11" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
+                    Finance & Banking
                   </Link>
                 </li>
               </ul>
@@ -852,14 +899,58 @@ const MasterLayout = ({ children }) => {
               </ul>
             </li>
 
-            <li>
-              <Link
-                href='/gallery'
-                className={pathname === "/gallery" ? "active-page" : ""}
-              >
-                <Icon icon='solar:gallery-wide-linear' className='menu-icon' />
+            <li className='dropdown'>
+              <Link href='#'>
+                <Icon
+                  icon='flowbite:users-group-outline'
+                  className='menu-icon'
+                />
                 <span>Gallery</span>
               </Link>
+              <ul className='sidebar-submenu'>
+                <li>
+                  <Link
+                    href='/gallery-grid'
+                    className={
+                      pathname === "/gallery-grid" ? "active-page" : ""
+                    }
+                  >
+                    <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />{" "}
+                    Gallery Grid
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/gallery'
+                    className={pathname === "/gallery" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
+                    Gallery Grid Desc
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/gallery-masonry'
+                    className={
+                      pathname === "/gallery-masonry" ? "active-page" : ""
+                    }
+                  >
+                    <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
+                    Gallery Grid
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/gallery-hover'
+                    className={
+                      pathname === "/gallery-hover" ? "active-page" : ""
+                    }
+                  >
+                    <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
+                    Gallery Hover Effect
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li>
               <Link
