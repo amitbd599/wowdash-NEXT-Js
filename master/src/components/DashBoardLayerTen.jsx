@@ -1,3 +1,4 @@
+import IncomeVsExpense from "./child/IncomeVsExpense";
 import UnitCountSeven from "./child/UnitCountSeven";
 
 const DashBoardLayerTen = () => {
@@ -7,7 +8,7 @@ const DashBoardLayerTen = () => {
       <UnitCountSeven />
 
       {/* IncomeVsExpense */}
-      {/* <IncomeVsExpense /> */}
+      <IncomeVsExpense />
 
       {/* UsersChart */}
       {/* <UsersChart /> */}
