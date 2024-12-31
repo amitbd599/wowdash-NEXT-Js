@@ -1,4 +1,7 @@
 import IncomeVsExpense from "./child/IncomeVsExpense";
+import OverallReport from "./child/OverallReport";
+import PurchaseAndSales from "./child/PurchaseAndSales";
+import RecentTransactions from "./child/RecentTransactions";
 import TopCustomer from "./child/TopCustomer";
 import TopSuppliers from "./child/TopSuppliers";
 import UnitCountSeven from "./child/UnitCountSeven";
@@ -23,13 +26,13 @@ const DashBoardLayerTen = () => {
       <TopCustomer />
 
       {/* OverallReport */}
-      {/* <OverallReport /> */}
+      <OverallReport />
 
       {/* PurchaseAndSales */}
-      {/* <PurchaseAndSales /> */}
+      <PurchaseAndSales />
 
       {/* RecentTransactions */}
-      {/* <RecentTransactions /> */}
+      <RecentTransactions />
     </div>
   );
 };
