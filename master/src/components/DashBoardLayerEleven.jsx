@@ -1,4 +1,8 @@
 import BalanceStatistic from "./child/BalanceStatistic";
+import EarningCategories from "./child/EarningCategories";
+import ExpenseStatistics from "./child/ExpenseStatistics";
+import MonthlyExpenseBreakdown from "./child/MonthlyExpenseBreakdown";
+import PaymentHistory from "./child/PaymentHistory";
 import UnitCountEight from "./child/UnitCountEight";
 
 const DashBoardLayerEleven = () => {
@@ -15,16 +19,16 @@ const DashBoardLayerEleven = () => {
               <BalanceStatistic />
 
               {/* EarningCategories */}
-              {/* <EarningCategories /> */}
+              <EarningCategories />
 
               {/* ExpenseStatistics */}
-              {/* <ExpenseStatistics /> */}
+              <ExpenseStatistics />
 
               {/* PaymentHistory */}
-              {/* <PaymentHistory /> */}
+              <PaymentHistory />
 
               {/* MonthlyExpenseBreakdown */}
-              {/* <MonthlyExpenseBreakdown /> */}
+              <MonthlyExpenseBreakdown />
             </div>
           </div>
           {/* Sidebar start */}
