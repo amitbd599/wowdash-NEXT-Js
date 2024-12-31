@@ -1,8 +1,10 @@
 import BalanceStatistic from "./child/BalanceStatistic";
 import EarningCategories from "./child/EarningCategories";
 import ExpenseStatistics from "./child/ExpenseStatistics";
+import Investment from "./child/Investment";
 import MonthlyExpenseBreakdown from "./child/MonthlyExpenseBreakdown";
 import PaymentHistory from "./child/PaymentHistory";
+import PaymentHistoryOne from "./child/PaymentHistoryOne";
 import QuickTransfer from "./child/QuickTransfer";
 import UnitCountEight from "./child/UnitCountEight";
 
@@ -38,14 +40,14 @@ const DashBoardLayerEleven = () => {
             <QuickTransfer />
 
             {/* Investment */}
-            {/* <Investment /> */}
+            <Investment />
           </div>
           {/* Sidebar end */}
         </div>
       </div>
 
       {/* PaymentHistoryOne */}
-      {/* <PaymentHistoryOne /> */}
+      <PaymentHistoryOne />
     </>
   );
 };
