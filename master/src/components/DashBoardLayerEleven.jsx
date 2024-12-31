@@ -3,6 +3,7 @@ import EarningCategories from "./child/EarningCategories";
 import ExpenseStatistics from "./child/ExpenseStatistics";
 import MonthlyExpenseBreakdown from "./child/MonthlyExpenseBreakdown";
 import PaymentHistory from "./child/PaymentHistory";
+import QuickTransfer from "./child/QuickTransfer";
 import UnitCountEight from "./child/UnitCountEight";
 
 const DashBoardLayerEleven = () => {
@@ -34,7 +35,7 @@ const DashBoardLayerEleven = () => {
           {/* Sidebar start */}
           <div className='col-xl-4'>
             {/* QuickTransfer */}
-            {/* <QuickTransfer /> */}
+            <QuickTransfer />
 
             {/* Investment */}
             {/* <Investment /> */}
