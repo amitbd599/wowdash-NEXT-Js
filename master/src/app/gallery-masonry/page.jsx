@@ -1,5 +1,5 @@
 import Breadcrumb from "@/components/Breadcrumb";
-import GalleryLayer from "@/components/GalleryLayer";
+import GalleryMasonryLayer from "@/components/child/GalleryMasonryLayer";
 import MasterLayout from "@/masterLayout/MasterLayout";
 
 export const metadata = {
@@ -14,10 +14,10 @@ const Page = () => {
       {/* MasterLayout */}
       <MasterLayout>
         {/* Breadcrumb */}
-        <Breadcrumb title='Gallery Grid Desc' />
+        <Breadcrumb title='Gallery Grid' />
 
         {/* GalleryLayer */}
-        <GalleryLayer />
+        <GalleryMasonryLayer />
       </MasterLayout>
     </>
   );
