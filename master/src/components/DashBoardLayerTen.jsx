@@ -1,5 +1,8 @@
 import IncomeVsExpense from "./child/IncomeVsExpense";
+import TopCustomer from "./child/TopCustomer";
+import TopSuppliers from "./child/TopSuppliers";
 import UnitCountSeven from "./child/UnitCountSeven";
+import UsersChart from "./child/UsersChart";
 
 const DashBoardLayerTen = () => {
   return (
@@ -11,13 +14,13 @@ const DashBoardLayerTen = () => {
       <IncomeVsExpense />
 
       {/* UsersChart */}
-      {/* <UsersChart /> */}
+      <UsersChart />
 
       {/* TopSuppliers */}
-      {/* <TopSuppliers /> */}
+      <TopSuppliers />
 
       {/* TopCustomer */}
-      {/* <TopCustomer /> */}
+      <TopCustomer />
 
       {/* OverallReport */}
       {/* <OverallReport /> */}
