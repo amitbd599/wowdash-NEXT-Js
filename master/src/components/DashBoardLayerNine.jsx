@@ -1,6 +1,9 @@
 import AverageDailySales from "./child/AverageDailySales";
+import MonthlyCampaignState from "./child/MonthlyCampaignState";
+import RecentActivityOne from "./child/RecentActivityOne";
 import RevenueStatisticOne from "./child/RevenueStatisticOne";
 import SalesByCountries from "./child/SalesByCountries";
+import SourceVisitors from "./child/SourceVisitors";
 import SupportTracker from "./child/SupportTracker";
 import TransactionsTwo from "./child/TransactionsTwo";
 import UpgradeYourPlan from "./child/UpgradeYourPlan";
@@ -27,13 +30,13 @@ const DashBoardLayerNine = () => {
       <SalesByCountries />
 
       {/* SourceVisitors */}
-      {/* <SourceVisitors /> */}
+      <SourceVisitors />
 
       {/* MonthlyCampaignState */}
-      {/* <MonthlyCampaignState /> */}
+      <MonthlyCampaignState />
 
       {/* RecentActivityOne */}
-      {/* <RecentActivityOne /> */}
+      <RecentActivityOne />
     </div>
   );
 };
