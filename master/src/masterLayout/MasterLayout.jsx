@@ -964,6 +964,59 @@ const MasterLayout = ({ children }) => {
                 <span>Pricing</span>
               </Link>
             </li>
+
+            {/* Blog */}
+
+            <li className='dropdown'>
+              <Link href='#'>
+                <Icon
+                  icon='flowbite:users-group-outline'
+                  className='menu-icon'
+                />
+                <span>Blog</span>
+              </Link>
+              <ul className='sidebar-submenu'>
+                <li>
+                  <Link
+                    href='/blog'
+                    className={pathname === "/blog" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />{" "}
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/blog-details'
+                    className={
+                      pathname === "/blog-details" ? "active-page" : ""
+                    }
+                  >
+                    <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
+                    Blog Details
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/add-blog'
+                    className={pathname === "/add-blog" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
+                    Add Blog
+                  </Link>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <Link
+                href='/testimonials'
+                className={pathname === "/testimonials" ? "active-page" : ""}
+              >
+                <Icon icon='ri-star-line' className='menu-icon' />
+                <span>Testimonials</span>
+              </Link>
+            </li>
             <li>
               <Link
                 href='/faq'
@@ -992,6 +1045,42 @@ const MasterLayout = ({ children }) => {
               >
                 <Icon icon='octicon:info-24' className='menu-icon' />
                 <span>Terms &amp; Conditions</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href='/coming-soon'
+                className={pathname === "/coming-soon" ? "active-page" : ""}
+              >
+                <i className='ri-rocket-line menu-icon'></i>
+                <span>Coming Soon</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href='/access-denied'
+                className={pathname === "/access-denied" ? "active-page" : ""}
+              >
+                <i className='ri-folder-lock-line menu-icon'></i>
+                <span>Access Denied</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href='/maintenance'
+                className={pathname === "/maintenance" ? "active-page" : ""}
+              >
+                <i className='ri-hammer-line menu-icon'></i>
+                <span>Maintenance</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href='/blank-page'
+                className={pathname === "/blank-page" ? "active-page" : ""}
+              >
+                <i className='ri-checkbox-multiple-blank-line menu-icon'></i>
+                <span>Blank Page</span>
               </Link>
             </li>
 
