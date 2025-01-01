@@ -1115,7 +1115,9 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/notification-alert'
-                    className={pathname === "/" ? "active-page" : ""}
+                    className={
+                      pathname === "/notification-alert" ? "active-page" : ""
+                    }
                   >
                     <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
                     Notification Alert
@@ -1124,7 +1126,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/theme'
-                    className={pathname === "/" ? "active-page" : ""}
+                    className={pathname === "/theme" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
                     Theme
@@ -1133,7 +1135,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/currencies'
-                    className={pathname === "/" ? "active-page" : ""}
+                    className={pathname === "/currencies" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
                     Currencies
@@ -1142,7 +1144,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/language'
-                    className={pathname === "/" ? "active-page" : ""}
+                    className={pathname === "/language" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
                     Languages
@@ -1151,7 +1153,9 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/payment-gateway'
-                    className={pathname === "/" ? "active-page" : ""}
+                    className={
+                      pathname === "/payment-gateway" ? "active-page" : ""
+                    }
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
                     Payment Gateway
@@ -1839,7 +1843,7 @@ const MasterLayout = ({ children }) => {
         <footer className='d-footer'>
           <div className='row align-items-center justify-content-between'>
             <div className='col-auto'>
-              <p className='mb-0'>© 2024 WowDash. All Rights Reserved.</p>
+              <p className='mb-0'>© 2025 WowDash. All Rights Reserved.</p>
             </div>
             <div className='col-auto'>
               <p className='mb-0'>

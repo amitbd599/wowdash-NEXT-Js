@@ -14,7 +14,7 @@ const Page = () => {
       {/* MasterLayout */}
       <MasterLayout>
         {/* Breadcrumb */}
-        <Breadcrumb title='Gallery' />
+        <Breadcrumb title='Gallery Grid Desc' />
 
         {/* GalleryLayer */}
         <GalleryLayer />

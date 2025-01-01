@@ -13,7 +13,7 @@ const MasterLayout = ({ children }) => {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    // Function to handle dropdown clicks
+
     const handleDropdownClick = (event) => {
       event.preventDefault();
       const clickedLink = event.currentTarget;
@@ -27,11 +27,19 @@ const MasterLayout = ({ children }) => {
       const allDropdowns = document.querySelectorAll(".sidebar-menu .dropdown");
       allDropdowns.forEach((dropdown) => {
         dropdown.classList.remove("open");
+        const submenu = dropdown.querySelector(".sidebar-submenu");
+        if (submenu) {
+          submenu.style.maxHeight = "0px"; // Collapse submenu
+        }
       });
 
       // Toggle the clicked dropdown
       if (!isActive) {
         clickedDropdown.classList.add("open");
+        const submenu = clickedDropdown.querySelector(".sidebar-submenu");
+        if (submenu) {
+          submenu.style.maxHeight = `${submenu.scrollHeight}px`; // Expand submenu
+        }
       }
     };
 
@@ -44,23 +52,26 @@ const MasterLayout = ({ children }) => {
       trigger.addEventListener("click", handleDropdownClick);
     });
 
-    // Function to open submenu based on current route
     const openActiveDropdown = () => {
       const allDropdowns = document.querySelectorAll(".sidebar-menu .dropdown");
       allDropdowns.forEach((dropdown) => {
         const submenuLinks = dropdown.querySelectorAll(".sidebar-submenu li a");
         submenuLinks.forEach((link) => {
           if (
-            link.getAttribute("href") === pathname ||
-            link.getAttribute("to") === pathname
+            link.getAttribute("href") === location ||
+            link.getAttribute("to") === location
           ) {
             dropdown.classList.add("open");
+            const submenu = dropdown.querySelector(".sidebar-submenu");
+            if (submenu) {
+              submenu.style.maxHeight = `${submenu.scrollHeight}px`; // Expand submenu
+            }
           }
         });
       });
     };
 
-    // Open the submenu that contains the open route
+    // Open the submenu that contains the active route
     openActiveDropdown();
 
     // Cleanup event listeners on unmount
@@ -189,6 +200,42 @@ const MasterLayout = ({ children }) => {
                   >
                     <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
                     NFT &amp; Gaming
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-8'
+                    className={pathname === "/index-8" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
+                    Medical
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-9'
+                    className={pathname === "/index-9" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
+                    Analytics
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-10'
+                    className={pathname === "/index-10" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
+                    POS & Inventory
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-11'
+                    className={pathname === "/index-11" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
+                    Finance & Banking
                   </Link>
                 </li>
               </ul>
@@ -852,14 +899,58 @@ const MasterLayout = ({ children }) => {
               </ul>
             </li>
 
-            <li>
-              <Link
-                href='/gallery'
-                className={pathname === "/gallery" ? "active-page" : ""}
-              >
-                <Icon icon='solar:gallery-wide-linear' className='menu-icon' />
+            <li className='dropdown'>
+              <Link href='#'>
+                <Icon
+                  icon='flowbite:users-group-outline'
+                  className='menu-icon'
+                />
                 <span>Gallery</span>
               </Link>
+              <ul className='sidebar-submenu'>
+                <li>
+                  <Link
+                    href='/gallery-grid'
+                    className={
+                      pathname === "/gallery-grid" ? "active-page" : ""
+                    }
+                  >
+                    <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />{" "}
+                    Gallery Grid
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/gallery'
+                    className={pathname === "/gallery" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
+                    Gallery Grid Desc
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/gallery-masonry'
+                    className={
+                      pathname === "/gallery-masonry" ? "active-page" : ""
+                    }
+                  >
+                    <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
+                    Gallery Grid
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/gallery-hover'
+                    className={
+                      pathname === "/gallery-hover" ? "active-page" : ""
+                    }
+                  >
+                    <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
+                    Gallery Hover Effect
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li>
               <Link
@@ -871,6 +962,59 @@ const MasterLayout = ({ children }) => {
                   className='menu-icon'
                 />
                 <span>Pricing</span>
+              </Link>
+            </li>
+
+            {/* Blog */}
+
+            <li className='dropdown'>
+              <Link href='#'>
+                <Icon
+                  icon='flowbite:users-group-outline'
+                  className='menu-icon'
+                />
+                <span>Blog</span>
+              </Link>
+              <ul className='sidebar-submenu'>
+                <li>
+                  <Link
+                    href='/blog'
+                    className={pathname === "/blog" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />{" "}
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/blog-details'
+                    className={
+                      pathname === "/blog-details" ? "active-page" : ""
+                    }
+                  >
+                    <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
+                    Blog Details
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/add-blog'
+                    className={pathname === "/add-blog" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
+                    Add Blog
+                  </Link>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <Link
+                href='/testimonials'
+                className={pathname === "/testimonials" ? "active-page" : ""}
+              >
+                <Icon icon='ri-star-line' className='menu-icon' />
+                <span>Testimonials</span>
               </Link>
             </li>
             <li>
@@ -903,6 +1047,42 @@ const MasterLayout = ({ children }) => {
                 <span>Terms &amp; Conditions</span>
               </Link>
             </li>
+            <li>
+              <Link
+                href='/coming-soon'
+                className={pathname === "/coming-soon" ? "active-page" : ""}
+              >
+                <i className='ri-rocket-line menu-icon'></i>
+                <span>Coming Soon</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href='/access-denied'
+                className={pathname === "/access-denied" ? "active-page" : ""}
+              >
+                <i className='ri-folder-lock-line menu-icon'></i>
+                <span>Access Denied</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href='/maintenance'
+                className={pathname === "/maintenance" ? "active-page" : ""}
+              >
+                <i className='ri-hammer-line menu-icon'></i>
+                <span>Maintenance</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href='/blank-page'
+                className={pathname === "/blank-page" ? "active-page" : ""}
+              >
+                <i className='ri-checkbox-multiple-blank-line menu-icon'></i>
+                <span>Blank Page</span>
+              </Link>
+            </li>
 
             {/* Settings Dropdown */}
             <li className='dropdown'>
@@ -917,7 +1097,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/company'
-                    className={pathname === "/" ? "active-page" : ""}
+                    className={pathname === "/company" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-primary-600 w-auto' />{" "}
                     Company
@@ -926,7 +1106,9 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/notification'
-                    className={pathname === "/" ? "active-page" : ""}
+                    className={
+                      pathname === "/notification" ? "active-page" : ""
+                    }
                   >
                     <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
                     Notification
@@ -935,7 +1117,9 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/notification-alert'
-                    className={pathname === "/" ? "active-page" : ""}
+                    className={
+                      pathname === "/notification-alert" ? "active-page" : ""
+                    }
                   >
                     <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
                     Notification Alert
@@ -944,7 +1128,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/theme'
-                    className={pathname === "/" ? "active-page" : ""}
+                    className={pathname === "/theme" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
                     Theme
@@ -953,7 +1137,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/currencies'
-                    className={pathname === "/" ? "active-page" : ""}
+                    className={pathname === "/currencies" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
                     Currencies
@@ -962,7 +1146,7 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/language'
-                    className={pathname === "/" ? "active-page" : ""}
+                    className={pathname === "/language" ? "active-page" : ""}
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
                     Languages
@@ -971,7 +1155,9 @@ const MasterLayout = ({ children }) => {
                 <li>
                   <Link
                     href='/payment-gateway'
-                    className={pathname === "/" ? "active-page" : ""}
+                    className={
+                      pathname === "/payment-gateway" ? "active-page" : ""
+                    }
                   >
                     <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
                     Payment Gateway
@@ -1659,7 +1845,7 @@ const MasterLayout = ({ children }) => {
         <footer className='d-footer'>
           <div className='row align-items-center justify-content-between'>
             <div className='col-auto'>
-              <p className='mb-0'>© 2024 WowDash. All Rights Reserved.</p>
+              <p className='mb-0'>© 2025 WowDash. All Rights Reserved.</p>
             </div>
             <div className='col-auto'>
               <p className='mb-0'>

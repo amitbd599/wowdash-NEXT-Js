@@ -7525,17 +7525,20 @@ font-size: 52px !important;
                     className='col-lg-4 col-sm-6 col-xs-6 wow flipInX'
                     data-wow-duration='0.65s'
                   >
-                    <div className='demo-item upcoming-item position-relative'>
+                    <div className='demo-item  position-relative'>
                       <div className='demo-item__inner bg-light-gradient-1'>
                         <div className='demo-item__thumbs position-relative'>
                           <img
-                            src='assets_demo/images/thumbs/demo-img2.png'
+                            src='assets_demo/images/thumbs/demo-img8.png'
                             alt=''
                           />
-                          <div className='demo-item__overlay visible opacity-100 transform-scale-1'>
-                            <span className='py-8 px-16 rounded-8 bg-black text-white'>
-                              Upcoming
-                            </span>
+                          <div className='demo-item__overlay'>
+                            <Link
+                              href='/index-8'
+                              className='btn btn-main btn-sm'
+                            >
+                              View Demo
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -7554,13 +7557,16 @@ font-size: 52px !important;
                       <div className='demo-item__inner bg-light-gradient-2'>
                         <div className='demo-item__thumbs position-relative'>
                           <img
-                            src='assets_demo/images/thumbs/demo-img2.png'
+                            src='assets_demo/images/thumbs/demo-img9.png'
                             alt=''
                           />
-                          <div className='demo-item__overlay visible opacity-100 transform-scale-1'>
-                            <span className='py-8 px-16 rounded-8 bg-black text-white'>
-                              Upcoming
-                            </span>
+                          <div className='demo-item__overlay'>
+                            <Link
+                              href='/index-9'
+                              className='btn btn-main btn-sm'
+                            >
+                              View Demo
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -7579,19 +7585,50 @@ font-size: 52px !important;
                       <div className='demo-item__inner bg-light-gradient-1'>
                         <div className='demo-item__thumbs position-relative'>
                           <img
-                            src='assets_demo/images/thumbs/demo-img2.png'
+                            src='assets_demo/images/thumbs/demo-img10.png'
                             alt=''
                           />
-                          <div className='demo-item__overlay visible opacity-100 transform-scale-1'>
-                            <span className='py-8 px-16 rounded-8 bg-black text-white'>
-                              Upcoming
-                            </span>
+                          <div className='demo-item__overlay'>
+                            <Link
+                              href='/index-10'
+                              className='btn btn-main btn-sm'
+                            >
+                              View Demo
+                            </Link>
                           </div>
                         </div>
                       </div>
                       <div className='text-center'>
                         <span className='text-heading fw-medium text-lg mt-12'>
                           POS &amp; Inventory
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className='col-lg-4 col-sm-6 col-xs-6 wow flipInX'
+                    data-wow-duration='0.65s'
+                  >
+                    <div className='demo-item upcoming-item position-relative'>
+                      <div className='demo-item__inner bg-light-gradient-1'>
+                        <div className='demo-item__thumbs position-relative'>
+                          <img
+                            src='assets_demo/images/thumbs/demo-img11.png'
+                            alt=''
+                          />
+                          <div className='demo-item__overlay'>
+                            <Link
+                              href='/index-11'
+                              className='btn btn-main btn-sm'
+                            >
+                              View Demo
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                      <div className='text-center'>
+                        <span className='text-heading fw-medium text-lg mt-12'>
+                          Finance & Banking
                         </span>
                       </div>
                     </div>

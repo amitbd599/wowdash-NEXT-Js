@@ -4537,7 +4537,937 @@ const useReactApexChart = () => {
     },
   };
 
+  let expenseStatisticsOptions = {
+    chart: {
+      height: 240,
+      type: "pie",
+    },
+    labels: ["Entertainment", "Bill Expense", "Others", "Investment"],
+    colors: ["#02BCAF", "#F0437D", "#1C52F6", "#43DCFF"],
+    legend: {
+      show: true,
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+  };
+
+  let expenseStatisticsSeries = [30, 30, 30, 30];
+
+  let balanceStatisticsOptions = {
+    colors: ["#487FFF", "#FF9F29"],
+    labels: ["Active", "New", "Total"],
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "bar",
+      height: 250,
+      toolbar: {
+        show: false,
+      },
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 4, // Use a number for dashed style
+      position: "back",
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        columnWidth: 10,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ["transparent"],
+    },
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+    },
+    yaxis: {
+      categories: [
+        "0",
+        "5000",
+        "10,000",
+        "20,000",
+        "30,000",
+        "50,000",
+        "60,000",
+        "60,000",
+        "70,000",
+        "80,000",
+        "90,000",
+        "100,000",
+      ],
+    },
+    fill: {
+      opacity: 1,
+      width: 18,
+    },
+  };
+
+  let balanceStatisticsSeries = [
+    {
+      name: "Net Profit",
+      data: [
+        20000, 16000, 14000, 25000, 45000, 18000, 28000, 11000, 26000, 48000,
+        18000, 22000,
+      ],
+    },
+    {
+      name: "Revenue",
+      data: [
+        15000, 18000, 19000, 20000, 35000, 20000, 18000, 13000, 18000, 38000,
+        14000, 16000,
+      ],
+    },
+  ];
+
+  let purchaseSaleChartOptions = {
+    colors: ["#45B369", "#FF9F29"],
+    labels: ["Active", "New", "Total"],
+
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "bar",
+      height: 260,
+      toolbar: {
+        show: false,
+      },
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 4, // Use a number for dashed style
+      position: "back",
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        columnWidth: 8,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    states: {
+      hover: {
+        filter: {
+          type: "none",
+        },
+      },
+    },
+    stroke: {
+      show: true,
+      width: 0,
+      colors: ["transparent"],
+    },
+    xaxis: {
+      categories: ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"],
+    },
+    fill: {
+      opacity: 1,
+      width: 18,
+    },
+  };
+
+  let purchaseSaleChartSeries = [
+    {
+      name: "Net Profit",
+      data: [44, 100, 40, 56, 30, 58, 50],
+    },
+    {
+      name: "Free Cash",
+      data: [60, 120, 60, 90, 50, 95, 90],
+    },
+  ];
+
+  let userOverviewDonutChartOptionsTwo = {
+    colors: ["#FF9F29", "#487FFF", "#45B369", "#9935FE"],
+    labels: ["Purchase", "Sales", "Expense", "Gross Profit"],
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "donut",
+      height: 270,
+      sparkline: {
+        enabled: true, // Remove whitespace
+      },
+      margin: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+      padding: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+    },
+    stroke: {
+      width: 0,
+    },
+    dataLabels: {
+      enabled: true,
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+  };
+
+  let userOverviewDonutChartSeriesTwo = [30, 30, 20, 20];
+
+  let incomeExpenseOptions = {
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "area",
+      width: "100%",
+      height: 270,
+      toolbar: {
+        show: false,
+      },
+      padding: {
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+      width: 3,
+      colors: ["#487FFF", "#FF9F29"], // Use two colors for the lines
+      lineCap: "round",
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 1,
+      position: "back",
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: true,
+        },
+      },
+      row: {
+        colors: undefined,
+        opacity: 0.5,
+      },
+      column: {
+        colors: undefined,
+        opacity: 0.5,
+      },
+      padding: {
+        top: -20,
+        right: 0,
+        bottom: -10,
+        left: 0,
+      },
+    },
+    fill: {
+      type: "gradient",
+      colors: ["#487FFF", "#FF9F29"], // Use two colors for the gradient
+
+      gradient: {
+        shade: "light",
+        type: "vertical",
+        shadeIntensity: 0.5,
+        gradientToColors: [undefined, `${"#FF9F29"}00`], // Apply transparency to both colors
+        inverseColors: false,
+        opacityFrom: [0.4, 0.6], // Starting opacity for both colors
+        opacityTo: [0.3, 0.3], // Ending opacity for both colors
+        stops: [0, 100],
+      },
+    },
+    markers: {
+      colors: ["#487FFF", "#FF9F29"], // Use two colors for the markers
+      strokeWidth: 3,
+      size: 0,
+      hover: {
+        size: 10,
+      },
+    },
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+      tooltip: {
+        enabled: false,
+      },
+      labels: {
+        formatter: function (value) {
+          return value;
+        },
+        style: {
+          fontSize: "14px",
+        },
+      },
+    },
+    yaxis: {
+      labels: {
+        formatter: function (value) {
+          return "$" + value + "k";
+        },
+        style: {
+          fontSize: "14px",
+        },
+      },
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  };
+
+  let incomeExpenseSeries = [
+    {
+      name: "series1",
+      data: [48, 35, 50, 32, 48, 40, 55, 50, 60],
+    },
+    {
+      name: "series2",
+      data: [12, 20, 15, 26, 22, 30, 25, 35, 25],
+    },
+  ];
+
+  let revenueChartOptionsOne = {
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "area",
+      width: "100%",
+      height: 150,
+      toolbar: {
+        show: false,
+      },
+      padding: {
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+      width: 3,
+      colors: ["#CD20F9", "#6593FF"], // Use two colors for the lines
+      lineCap: "round",
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 1,
+      position: "back",
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: true,
+        },
+      },
+      row: {
+        colors: undefined,
+        opacity: 0.5,
+      },
+      column: {
+        colors: undefined,
+        opacity: 0.5,
+      },
+      padding: {
+        top: -20,
+        right: 0,
+        bottom: -10,
+        left: 0,
+      },
+    },
+    fill: {
+      type: "gradient",
+      colors: ["#CD20F9", "#6593FF"], // Use two colors for the gradient
+
+      gradient: {
+        shade: "light",
+        type: "vertical",
+        shadeIntensity: 0.5,
+        gradientToColors: [undefined, `${"#6593FF"}00`], // Apply transparency to both colors
+        inverseColors: false,
+        opacityFrom: [0.4, 0.6], // Starting opacity for both colors
+        opacityTo: [0.3, 0.3], // Ending opacity for both colors
+        stops: [0, 100],
+      },
+    },
+
+    markers: {
+      colors: ["#CD20F9", "#6593FF"],
+      strokeWidth: 2,
+      size: 0,
+      hover: {
+        size: 8,
+      },
+    },
+
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+      tooltip: {
+        enabled: false,
+      },
+      labels: {
+        formatter: function (value) {
+          return value;
+        },
+        style: {
+          fontSize: "14px",
+        },
+      },
+    },
+    yaxis: {
+      labels: {
+        formatter: function (value) {
+          return "$" + value + "k";
+        },
+        style: {
+          fontSize: "14px",
+        },
+      },
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  };
+  let revenueChartSeriesOne = [
+    {
+      name: "series1",
+      data: [6, 20, 15, 48, 28, 55, 28, 52, 25, 32, 15, 25],
+    },
+    {
+      name: "series2",
+      data: [0, 8, 4, 36, 16, 42, 16, 40, 12, 24, 4, 12],
+    },
+  ];
+  let barChartOptionsOne = {
+    chart: {
+      type: "bar",
+      height: 200,
+      toolbar: {
+        show: false,
+      },
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 6,
+        horizontal: false,
+
+        columnWidth: "40%",
+        endingShape: "rounded",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    fill: {
+      type: "gradient",
+      colors: ["#dae5ff"], // Set the starting color (top color) here
+      gradient: {
+        shade: "light", // Gradient shading type
+        type: "vertical", // Gradient direction (vertical)
+        shadeIntensity: 0.5, // Intensity of the gradient shading
+        gradientToColors: ["#dae5ff"], // Bottom gradient color (with transparency)
+        inverseColors: false, // Do not invert colors
+        opacityFrom: 1, // Starting opacity
+        opacityTo: 1, // Ending opacity
+        stops: [0, 100],
+      },
+    },
+    grid: {
+      show: false,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 4, // Use a number for dashed style
+      position: "back",
+      padding: {
+        top: -10,
+        right: -10,
+        bottom: -10,
+        left: -10,
+      },
+    },
+    xaxis: {
+      type: "category",
+      categories: ["2hr", "4hr", "6hr", "8hr", "10hr", "12hr", "14hr"],
+    },
+    yaxis: {
+      show: false,
+    },
+  };
+
+  let barChartSeriesOne = [
+    {
+      name: "Sales",
+      data: [
+        {
+          x: "Sun",
+          y: 15,
+        },
+        {
+          x: "Mon",
+          y: 12,
+        },
+        {
+          x: "Tue",
+          y: 18,
+        },
+        {
+          x: "Wed",
+          y: 20,
+        },
+        {
+          x: "Thu",
+          y: 13,
+        },
+        {
+          x: "Fri",
+          y: 16,
+        },
+        {
+          x: "Sat",
+          y: 6,
+        },
+      ],
+    },
+  ];
+
+  let userOverviewDonutChartOptionsOne = {
+    colors: ["#FF9F29", "#487FFF", "#45B369"],
+    labels: ["Active", "New", "Total"],
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "donut",
+      height: 270,
+      sparkline: {
+        enabled: true, // Remove whitespace
+      },
+      margin: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+      padding: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+    },
+    stroke: {
+      width: 0,
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+  };
+
+  let userOverviewDonutChartSeriesOne = [500, 500, 500];
+
+  let statisticsDonutChartOptionsTwo = {
+    colors: ["#FF9F29", "#45B369"],
+    labels: ["Female", "Male"],
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "donut",
+      height: 260,
+      sparkline: {
+        enabled: true, // Remove whitespace
+      },
+      margin: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+      padding: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+    },
+    stroke: {
+      width: 0,
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+  };
+
+  let statisticsDonutChartSeriesTwo = [30, 25];
+
+  let radialMultipleBarOptions = {
+    chart: {
+      height: 300,
+      type: "radialBar",
+    },
+    colors: ["#3D7FF9", "#ff9f29", "#16a34a"],
+    stroke: {
+      lineCap: "round",
+    },
+    plotOptions: {
+      radialBar: {
+        hollow: {
+          size: "10%", // Adjust this value to control the bar width
+        },
+        dataLabels: {
+          name: {
+            fontSize: "16px",
+          },
+          value: {
+            fontSize: "16px",
+          },
+        },
+        track: {
+          margin: 20, // Space between the bars
+        },
+      },
+    },
+    labels: ["Cardiology", "Psychiatry", "Pediatrics"],
+  };
+  let radialMultipleBarSeries = [80, 40, 10];
+
+  let paymentStatusChartOptionsFour = {
+    colors: ["#45B369", "#FF9F29"],
+    labels: ["Active", "New", "Total"],
+
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "bar",
+      height: 260,
+      toolbar: {
+        show: false,
+      },
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 4, // Use a number for dashed style
+      position: "back",
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        columnWidth: 8,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    states: {
+      hover: {
+        filter: {
+          type: "none",
+        },
+      },
+    },
+    stroke: {
+      show: true,
+      width: 0,
+      colors: ["transparent"],
+    },
+    xaxis: {
+      categories: ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"],
+    },
+    fill: {
+      opacity: 1,
+      width: 18,
+    },
+  };
+
+  let paymentStatusChartSeriesFour = [
+    {
+      name: "Net Profit",
+      data: [44, 100, 40, 56, 30, 58, 50],
+    },
+    {
+      name: "Free Cash",
+      data: [60, 120, 60, 90, 50, 95, 90],
+    },
+  ];
+
+  let enrollmentChartOptions = {
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "area",
+      width: "100%",
+      height: 270,
+      toolbar: {
+        show: false,
+      },
+      padding: {
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+      width: 3,
+      colors: ["#487FFF", "#FF9F29"], // Use two colors for the lines
+      lineCap: "round",
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 1,
+      position: "back",
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: true,
+        },
+      },
+      row: {
+        colors: undefined,
+        opacity: 0.5,
+      },
+      column: {
+        colors: undefined,
+        opacity: 0.5,
+      },
+      padding: {
+        top: -20,
+        right: 0,
+        bottom: -10,
+        left: 0,
+      },
+    },
+    fill: {
+      type: "gradient",
+      colors: ["#487FFF", "#FF9F29"], // Use two colors for the gradient
+
+      gradient: {
+        shade: "light",
+        type: "vertical",
+        shadeIntensity: 0.5,
+        gradientToColors: [undefined, `${"#FF9F29"}00`], // Apply transparency to both colors
+        inverseColors: false,
+        opacityFrom: [0.4, 0.6], // Starting opacity for both colors
+        opacityTo: [0.3, 0.3], // Ending opacity for both colors
+        stops: [0, 100],
+      },
+    },
+    markers: {
+      colors: ["#487FFF", "#FF9F29"], // Use two colors for the markers
+      strokeWidth: 3,
+      size: 0,
+      hover: {
+        size: 10,
+      },
+    },
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+      tooltip: {
+        enabled: false,
+      },
+      labels: {
+        formatter: function (value) {
+          return value;
+        },
+        style: {
+          fontSize: "14px",
+        },
+      },
+    },
+    yaxis: {
+      labels: {
+        formatter: function (value) {
+          return "$" + value + "k";
+        },
+        style: {
+          fontSize: "14px",
+        },
+      },
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  };
+
+  let enrollmentChartSeries = [
+    {
+      name: "series1",
+      data: [48, 35, 55, 32, 48, 30, 55, 50, 57],
+    },
+    {
+      name: "series2",
+      data: [12, 20, 15, 26, 22, 60, 40, 48, 25],
+    },
+  ];
+
   return {
+    expenseStatisticsOptions,
+    expenseStatisticsSeries,
+    balanceStatisticsOptions,
+    balanceStatisticsSeries,
+    purchaseSaleChartOptions,
+    purchaseSaleChartSeries,
+    userOverviewDonutChartOptionsTwo,
+    userOverviewDonutChartSeriesTwo,
+    incomeExpenseOptions,
+    incomeExpenseSeries,
+    revenueChartOptionsOne,
+    revenueChartSeriesOne,
+    barChartOptionsOne,
+    barChartSeriesOne,
+    userOverviewDonutChartOptionsOne,
+    userOverviewDonutChartSeriesOne,
+    statisticsDonutChartOptionsTwo,
+    statisticsDonutChartSeriesTwo,
+    radialMultipleBarOptions,
+    radialMultipleBarSeries,
+    paymentStatusChartOptionsFour,
+    paymentStatusChartSeriesFour,
     chartSeries,
     chartOptions,
     barChartSeries,
@@ -4617,6 +5547,8 @@ const useReactApexChart = () => {
     timeSeriesChartOptionsTwo,
     gradientLineChartSeries,
     gradientLineChartOptions,
+    enrollmentChartOptions,
+    enrollmentChartSeries,
   };
 };
 

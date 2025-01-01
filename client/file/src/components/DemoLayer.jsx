@@ -6926,10 +6926,10 @@ font-size: 52px !important;
                       Dashboard{" "}
                     </h6>
                     <h1 className='mb-24 wow bounceIn'>
-                      WowDash React Js Admin Dashboard Multipurpose Template{" "}
+                      WowDash Next JS Admin Dashboard Multipurpose Template{" "}
                     </h1>
                     <p className='max-w-772 ms-auto me-auto wow bounceInUp'>
-                      Wowdash React Js is a developer-friendly, ready-to-use
+                      Wowdash Next JS is a developer-friendly, ready-to-use
                       admin template designed for building attractive, scalable,
                       and high-performing web applications.
                     </p>
@@ -7032,7 +7032,7 @@ font-size: 52px !important;
           <div className='container'>
             <div className='section-heading'>
               <h4 className='mb-16 wow bounceIn'>
-                WowDash React Js Admin Template Main Features
+                WowDash Next JS Admin Template Main Features
               </h4>
               <p className='text-md wow bounceInUp'>
                 Ready-to-use features are included with this template. Its
@@ -7270,7 +7270,7 @@ font-size: 52px !important;
               <h1 className='section-heading__title'>7+</h1>
               <h4 className='mb-16 wow bounceIn'>Complete Demo Dashboards</h4>
               <p className='text-md wow bounceInUp'>
-                WowDash React Js admin template provides Outstanding workable
+                WowDash Next JS admin template provides Outstanding workable
                 dashboard layouts with dark mode, & Inner pages
               </p>
               <ul
@@ -7613,7 +7613,7 @@ font-size: 52px !important;
               <h1 className='section-heading__title'>5+</h1>
               <h4 className='mb-16 wow bounceIn'>Ready Application</h4>
               <p className='text-md wow bounceInUp'>
-                WowDash React Js admin template provides excellent workable
+                WowDash Next JS admin template provides excellent workable
                 application and design of Other applications.
               </p>
             </div>
@@ -7940,7 +7940,7 @@ font-size: 52px !important;
           <div className='container'>
             <div className='footer-content'>
               <h5 className='mb-32 text-white text-30 fw-medium wow bounceInUp'>
-                Purchase WowDash React Js Template now &amp; make your project
+                Purchase WowDash Next JS Template now &amp; make your project
                 more excellent!
               </h5>
               <div className='mt-32 flex-center gap-24'>
