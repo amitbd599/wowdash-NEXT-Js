@@ -98,8 +98,8 @@ const MasterLayout = ({ children }) => {
           sidebarActive
             ? "sidebar active "
             : mobileMenu
-            ? "sidebar sidebar-open"
-            : "sidebar"
+              ? "sidebar sidebar-open"
+              : "sidebar"
         }
       >
         <button
@@ -236,6 +236,90 @@ const MasterLayout = ({ children }) => {
                   >
                     <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
                     Finance & Banking
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-12'
+                    className={pathname === "/index-12" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
+                    Booking System
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-13'
+                    className={pathname === "/index-13" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-success-main w-auto' />{" "}
+                    Help Desk
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-14'
+                    className={pathname === "/index-14" ? "active-page" : ""}
+
+                  >
+                    <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
+                    Podcast
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-15'
+                    className={pathname === "/index-15" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-success-main w-auto' />{" "}
+                    Project Management
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-16'
+                    className={pathname === "/index-16" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-info-purple w-auto' />{" "}
+                    Call Center
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-17'
+                    className={pathname === "/index-17" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-warning-main w-auto' />{" "}
+                    SaaS
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-18'
+                    className={pathname === "/index-18" ? "active-page" : ""}
+
+                  >
+                    <i className='ri-circle-fill circle-icon text-info-purple w-auto' />{" "}
+                    Sales
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-19'
+                    className={pathname === "/index-19" ? "active-page" : ""}
+                  >
+                    <i className='ri-circle-fill circle-icon text-info-main w-auto' />{" "}
+                    Real Estate
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/index-20'
+                    className={pathname === "/index-20" ? "active-page" : ""}
+
+                  >
+                    <i className='ri-circle-fill circle-icon text-danger-main w-auto' />{" "}
+                    Shipment
                   </Link>
                 </li>
               </ul>

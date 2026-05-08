@@ -173,7 +173,7 @@ table.dataTable td.dt-type-date {
 }
 
 .sidebar-menu li > a.active-page:hover {
-  color: var(--text-primary-light);
+    color: var(--text-primary-light);
 }
 .me-8 {
   margin-right: 8px;
@@ -203,4 +203,22 @@ table.dataTable td.dt-type-date {
 
 .overlay.active::after {
   width: 100%;
+}
+
+.Gallery-masonry {
+  background: #000;
+  z-index: 99999;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.travel-slider .slick-slide{
+  margin: 0;
+}
+
+.Check.complete{
+  stroke-dashoffset: 65.9734px !important;
 }
