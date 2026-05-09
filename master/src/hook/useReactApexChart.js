@@ -7487,52 +7487,20 @@ const useReactApexChart = () => {
   const UpgradeYourPlanTwoOptions = {
     chart: {
       type: "donut",
-      height: 270,
-      sparkline: {
-        enabled: true, // remove whitespace
-      },
-      margin: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-      },
-      padding: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-      },
     },
-    colors: ["#487FFF", "#9935FE", "#FF9F29", "#45B369"],
+
     labels: [
       "Total Visitors",
       "Registrations",
       "Total Page Views",
-      "Registrations",
+      "Subscriptions",
     ],
+
+    colors: ["#487FFF", "#9935FE", "#FF9F29", "#45B369"],
+
     legend: {
       show: false,
     },
-    stroke: {
-      width: 0,
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    responsive: [
-      {
-        breakpoint: 480,
-        options: {
-          chart: {
-            width: 200,
-          },
-          legend: {
-            position: "bottom",
-          },
-        },
-      },
-    ],
   };
 
   const SalesFigureSeries = [

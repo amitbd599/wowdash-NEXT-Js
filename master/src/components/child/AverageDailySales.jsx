@@ -1,11 +1,11 @@
 "use client";
 
-import useReactApexChart from "@/hook/useReactApexChart";
+
 import dynamic from "next/dynamic";
 const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
-
+import useReactApexChart from "@/hook/useReactApexChart";
 const AverageDailySales = () => {
   let { barChartOptionsOne, barChartSeriesOne } = useReactApexChart();
   return (
