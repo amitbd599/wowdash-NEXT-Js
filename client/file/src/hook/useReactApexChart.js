@@ -1,4 +1,7 @@
+"use client";
+
 import dynamic from "next/dynamic";
+
 const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
@@ -14,7 +17,7 @@ const useReactApexChart = () => {
   let chartOptions = {
     chart: {
       height: 264,
-      type: "area",
+      type: "line",
       toolbar: {
         show: false,
       },
@@ -1728,20 +1731,6 @@ const useReactApexChart = () => {
           top: 0,
           bottom: 0,
         },
-        // events: {
-        //     mounted: function (chartContext, config) {
-        //         // Apply CSS blur to markers
-        //         document.querySelectorAll(`#${color} .apexcharts-marker`).forEach(marker => {
-        //             marker.style.filter = 'blur(2px)';
-        //         });
-        //     },
-        //     updated: function (chartContext, config) {
-        //         // Apply CSS blur to markers
-        //         document.querySelectorAll(`#${chartId} .apexcharts-marker`).forEach(marker => {
-        //             marker.style.filter = 'blur(3px)';
-        //         });
-        //     }
-        // }
       },
       dataLabels: {
         enabled: false,
@@ -1844,6 +1833,7 @@ const useReactApexChart = () => {
         series={series}
         type='area'
         height={70}
+        width={100}
       />
     );
   };
@@ -4537,231 +4527,7 @@ const useReactApexChart = () => {
     },
   };
 
-  let expenseStatisticsOptions = {
-    chart: {
-      height: 240,
-      type: "pie",
-    },
-    labels: ["Entertainment", "Bill Expense", "Others", "Investment"],
-    colors: ["#02BCAF", "#F0437D", "#1C52F6", "#43DCFF"],
-    legend: {
-      show: true,
-    },
-    responsive: [
-      {
-        breakpoint: 480,
-        options: {
-          chart: {
-            width: 200,
-          },
-          legend: {
-            position: "bottom",
-          },
-        },
-      },
-    ],
-  };
-
-  let expenseStatisticsSeries = [30, 30, 30, 30];
-
-  let balanceStatisticsOptions = {
-    colors: ["#487FFF", "#FF9F29"],
-    labels: ["Active", "New", "Total"],
-    legend: {
-      show: false,
-    },
-    chart: {
-      type: "bar",
-      height: 250,
-      toolbar: {
-        show: false,
-      },
-    },
-    grid: {
-      show: true,
-      borderColor: "#D1D5DB",
-      strokeDashArray: 4, // Use a number for dashed style
-      position: "back",
-    },
-    plotOptions: {
-      bar: {
-        borderRadius: 4,
-        columnWidth: 10,
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      show: true,
-      width: 2,
-      colors: ["transparent"],
-    },
-    xaxis: {
-      categories: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
-    },
-    yaxis: {
-      categories: [
-        "0",
-        "5000",
-        "10,000",
-        "20,000",
-        "30,000",
-        "50,000",
-        "60,000",
-        "60,000",
-        "70,000",
-        "80,000",
-        "90,000",
-        "100,000",
-      ],
-    },
-    fill: {
-      opacity: 1,
-      width: 18,
-    },
-  };
-
-  let balanceStatisticsSeries = [
-    {
-      name: "Net Profit",
-      data: [
-        20000, 16000, 14000, 25000, 45000, 18000, 28000, 11000, 26000, 48000,
-        18000, 22000,
-      ],
-    },
-    {
-      name: "Revenue",
-      data: [
-        15000, 18000, 19000, 20000, 35000, 20000, 18000, 13000, 18000, 38000,
-        14000, 16000,
-      ],
-    },
-  ];
-
-  let purchaseSaleChartOptions = {
-    colors: ["#45B369", "#FF9F29"],
-    labels: ["Active", "New", "Total"],
-
-    legend: {
-      show: false,
-    },
-    chart: {
-      type: "bar",
-      height: 260,
-      toolbar: {
-        show: false,
-      },
-    },
-    grid: {
-      show: true,
-      borderColor: "#D1D5DB",
-      strokeDashArray: 4, // Use a number for dashed style
-      position: "back",
-    },
-    plotOptions: {
-      bar: {
-        borderRadius: 4,
-        columnWidth: 8,
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    states: {
-      hover: {
-        filter: {
-          type: "none",
-        },
-      },
-    },
-    stroke: {
-      show: true,
-      width: 0,
-      colors: ["transparent"],
-    },
-    xaxis: {
-      categories: ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"],
-    },
-    fill: {
-      opacity: 1,
-      width: 18,
-    },
-  };
-
-  let purchaseSaleChartSeries = [
-    {
-      name: "Net Profit",
-      data: [44, 100, 40, 56, 30, 58, 50],
-    },
-    {
-      name: "Free Cash",
-      data: [60, 120, 60, 90, 50, 95, 90],
-    },
-  ];
-
-  let userOverviewDonutChartOptionsTwo = {
-    colors: ["#FF9F29", "#487FFF", "#45B369", "#9935FE"],
-    labels: ["Purchase", "Sales", "Expense", "Gross Profit"],
-    legend: {
-      show: false,
-    },
-    chart: {
-      type: "donut",
-      height: 270,
-      sparkline: {
-        enabled: true, // Remove whitespace
-      },
-      margin: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-      },
-      padding: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-      },
-    },
-    stroke: {
-      width: 0,
-    },
-    dataLabels: {
-      enabled: true,
-    },
-    responsive: [
-      {
-        breakpoint: 480,
-        options: {
-          chart: {
-            width: 200,
-          },
-          legend: {
-            position: "bottom",
-          },
-        },
-      },
-    ],
-  };
-
-  let userOverviewDonutChartSeriesTwo = [30, 30, 20, 20];
-
-  let incomeExpenseOptions = {
+  let enrollmentChartOptions = {
     legend: {
       show: false,
     },
@@ -4885,14 +4651,293 @@ const useReactApexChart = () => {
     },
   };
 
-  let incomeExpenseSeries = [
+  let enrollmentChartSeries = [
     {
       name: "series1",
-      data: [48, 35, 50, 32, 48, 40, 55, 50, 60],
+      data: [48, 35, 55, 32, 48, 30, 55, 50, 57],
     },
     {
       name: "series2",
-      data: [12, 20, 15, 26, 22, 30, 25, 35, 25],
+      data: [12, 20, 15, 26, 22, 60, 40, 48, 25],
+    },
+  ];
+
+  let paymentStatusChartOptionsFour = {
+    colors: ["#45B369", "#FF9F29"],
+    labels: ["Active", "New", "Total"],
+
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "bar",
+      height: 260,
+      toolbar: {
+        show: false,
+      },
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 4, // Use a number for dashed style
+      position: "back",
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        columnWidth: 8,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    states: {
+      hover: {
+        filter: {
+          type: "none",
+        },
+      },
+    },
+    stroke: {
+      show: true,
+      width: 0,
+      colors: ["transparent"],
+    },
+    xaxis: {
+      categories: ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"],
+    },
+    fill: {
+      opacity: 1,
+      width: 18,
+    },
+  };
+
+  let paymentStatusChartSeriesFour = [
+    {
+      name: "Net Profit",
+      data: [44, 100, 40, 56, 30, 58, 50],
+    },
+    {
+      name: "Free Cash",
+      data: [60, 120, 60, 90, 50, 95, 90],
+    },
+  ];
+
+  let radialMultipleBarOptions = {
+    chart: {
+      height: 300,
+      type: "radialBar",
+    },
+    colors: ["#3D7FF9", "#ff9f29", "#16a34a"],
+    stroke: {
+      lineCap: "round",
+    },
+    plotOptions: {
+      radialBar: {
+        hollow: {
+          size: "10%", // Adjust this value to control the bar width
+        },
+        dataLabels: {
+          name: {
+            fontSize: "16px",
+          },
+          value: {
+            fontSize: "16px",
+          },
+        },
+        track: {
+          margin: 20, // Space between the bars
+        },
+      },
+    },
+    labels: ["Cardiology", "Psychiatry", "Pediatrics"],
+  };
+  let radialMultipleBarSeries = [80, 40, 10];
+
+  let statisticsDonutChartOptionsTwo = {
+    colors: ["#FF9F29", "#45B369"],
+    labels: ["Female", "Male"],
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "donut",
+      height: 260,
+      sparkline: {
+        enabled: true, // Remove whitespace
+      },
+      margin: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+      padding: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+    },
+    stroke: {
+      width: 0,
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+  };
+
+  let statisticsDonutChartSeriesTwo = [30, 25];
+
+  let userOverviewDonutChartOptionsOne = {
+    colors: ["#FF9F29", "#487FFF", "#45B369"],
+    labels: ["Active", "New", "Total"],
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "donut",
+      height: 270,
+      sparkline: {
+        enabled: true, // Remove whitespace
+      },
+      margin: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+      padding: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+    },
+    stroke: {
+      width: 0,
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+  };
+
+  let userOverviewDonutChartSeriesOne = [500, 500, 500];
+
+  let barChartOptionsOne = {
+    chart: {
+      type: "bar",
+      height: 200,
+      toolbar: {
+        show: false,
+      },
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 6,
+        horizontal: false,
+
+        columnWidth: "40%",
+        endingShape: "rounded",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    fill: {
+      type: "gradient",
+      colors: ["#dae5ff"], // Set the starting color (top color) here
+      gradient: {
+        shade: "light", // Gradient shading type
+        type: "vertical", // Gradient direction (vertical)
+        shadeIntensity: 0.5, // Intensity of the gradient shading
+        gradientToColors: ["#dae5ff"], // Bottom gradient color (with transparency)
+        inverseColors: false, // Do not invert colors
+        opacityFrom: 1, // Starting opacity
+        opacityTo: 1, // Ending opacity
+        stops: [0, 100],
+      },
+    },
+    grid: {
+      show: false,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 4, // Use a number for dashed style
+      position: "back",
+      padding: {
+        top: -10,
+        right: -10,
+        bottom: -10,
+        left: -10,
+      },
+    },
+    xaxis: {
+      type: "category",
+      categories: ["2hr", "4hr", "6hr", "8hr", "10hr", "12hr", "14hr"],
+    },
+    yaxis: {
+      show: false,
+    },
+  };
+
+  let barChartSeriesOne = [
+    {
+      name: "Sales",
+      data: [
+        {
+          x: "Sun",
+          y: 15,
+        },
+        {
+          x: "Mon",
+          y: 12,
+        },
+        {
+          x: "Tue",
+          y: 18,
+        },
+        {
+          x: "Wed",
+          y: 20,
+        },
+        {
+          x: "Thu",
+          y: 13,
+        },
+        {
+          x: "Fri",
+          y: 16,
+        },
+        {
+          x: "Sat",
+          y: 6,
+        },
+      ],
     },
   ];
 
@@ -5031,286 +5076,8 @@ const useReactApexChart = () => {
       data: [0, 8, 4, 36, 16, 42, 16, 40, 12, 24, 4, 12],
     },
   ];
-  let barChartOptionsOne = {
-    chart: {
-      type: "bar",
-      height: 200,
-      toolbar: {
-        show: false,
-      },
-    },
-    plotOptions: {
-      bar: {
-        borderRadius: 6,
-        horizontal: false,
 
-        columnWidth: "40%",
-        endingShape: "rounded",
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    fill: {
-      type: "gradient",
-      colors: ["#dae5ff"], // Set the starting color (top color) here
-      gradient: {
-        shade: "light", // Gradient shading type
-        type: "vertical", // Gradient direction (vertical)
-        shadeIntensity: 0.5, // Intensity of the gradient shading
-        gradientToColors: ["#dae5ff"], // Bottom gradient color (with transparency)
-        inverseColors: false, // Do not invert colors
-        opacityFrom: 1, // Starting opacity
-        opacityTo: 1, // Ending opacity
-        stops: [0, 100],
-      },
-    },
-    grid: {
-      show: false,
-      borderColor: "#D1D5DB",
-      strokeDashArray: 4, // Use a number for dashed style
-      position: "back",
-      padding: {
-        top: -10,
-        right: -10,
-        bottom: -10,
-        left: -10,
-      },
-    },
-    xaxis: {
-      type: "category",
-      categories: ["2hr", "4hr", "6hr", "8hr", "10hr", "12hr", "14hr"],
-    },
-    yaxis: {
-      show: false,
-    },
-  };
-
-  let barChartSeriesOne = [
-    {
-      name: "Sales",
-      data: [
-        {
-          x: "Sun",
-          y: 15,
-        },
-        {
-          x: "Mon",
-          y: 12,
-        },
-        {
-          x: "Tue",
-          y: 18,
-        },
-        {
-          x: "Wed",
-          y: 20,
-        },
-        {
-          x: "Thu",
-          y: 13,
-        },
-        {
-          x: "Fri",
-          y: 16,
-        },
-        {
-          x: "Sat",
-          y: 6,
-        },
-      ],
-    },
-  ];
-
-  let userOverviewDonutChartOptionsOne = {
-    colors: ["#FF9F29", "#487FFF", "#45B369"],
-    labels: ["Active", "New", "Total"],
-    legend: {
-      show: false,
-    },
-    chart: {
-      type: "donut",
-      height: 270,
-      sparkline: {
-        enabled: true, // Remove whitespace
-      },
-      margin: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-      },
-      padding: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-      },
-    },
-    stroke: {
-      width: 0,
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    responsive: [
-      {
-        breakpoint: 480,
-        options: {
-          chart: {
-            width: 200,
-          },
-          legend: {
-            position: "bottom",
-          },
-        },
-      },
-    ],
-  };
-
-  let userOverviewDonutChartSeriesOne = [500, 500, 500];
-
-  let statisticsDonutChartOptionsTwo = {
-    colors: ["#FF9F29", "#45B369"],
-    labels: ["Female", "Male"],
-    legend: {
-      show: false,
-    },
-    chart: {
-      type: "donut",
-      height: 260,
-      sparkline: {
-        enabled: true, // Remove whitespace
-      },
-      margin: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-      },
-      padding: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-      },
-    },
-    stroke: {
-      width: 0,
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    responsive: [
-      {
-        breakpoint: 480,
-        options: {
-          chart: {
-            width: 200,
-          },
-          legend: {
-            position: "bottom",
-          },
-        },
-      },
-    ],
-  };
-
-  let statisticsDonutChartSeriesTwo = [30, 25];
-
-  let radialMultipleBarOptions = {
-    chart: {
-      height: 300,
-      type: "radialBar",
-    },
-    colors: ["#3D7FF9", "#ff9f29", "#16a34a"],
-    stroke: {
-      lineCap: "round",
-    },
-    plotOptions: {
-      radialBar: {
-        hollow: {
-          size: "10%", // Adjust this value to control the bar width
-        },
-        dataLabels: {
-          name: {
-            fontSize: "16px",
-          },
-          value: {
-            fontSize: "16px",
-          },
-        },
-        track: {
-          margin: 20, // Space between the bars
-        },
-      },
-    },
-    labels: ["Cardiology", "Psychiatry", "Pediatrics"],
-  };
-  let radialMultipleBarSeries = [80, 40, 10];
-
-  let paymentStatusChartOptionsFour = {
-    colors: ["#45B369", "#FF9F29"],
-    labels: ["Active", "New", "Total"],
-
-    legend: {
-      show: false,
-    },
-    chart: {
-      type: "bar",
-      height: 260,
-      toolbar: {
-        show: false,
-      },
-    },
-    grid: {
-      show: true,
-      borderColor: "#D1D5DB",
-      strokeDashArray: 4, // Use a number for dashed style
-      position: "back",
-    },
-    plotOptions: {
-      bar: {
-        borderRadius: 4,
-        columnWidth: 8,
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    states: {
-      hover: {
-        filter: {
-          type: "none",
-        },
-      },
-    },
-    stroke: {
-      show: true,
-      width: 0,
-      colors: ["transparent"],
-    },
-    xaxis: {
-      categories: ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"],
-    },
-    fill: {
-      opacity: 1,
-      width: 18,
-    },
-  };
-
-  let paymentStatusChartSeriesFour = [
-    {
-      name: "Net Profit",
-      data: [44, 100, 40, 56, 30, 58, 50],
-    },
-    {
-      name: "Free Cash",
-      data: [60, 120, 60, 90, 50, 95, 90],
-    },
-  ];
-
-  let enrollmentChartOptions = {
+  let incomeExpenseOptions = {
     legend: {
       show: false,
     },
@@ -5434,18 +5201,3117 @@ const useReactApexChart = () => {
     },
   };
 
-  let enrollmentChartSeries = [
+  let incomeExpenseSeries = [
     {
       name: "series1",
-      data: [48, 35, 55, 32, 48, 30, 55, 50, 57],
+      data: [48, 35, 50, 32, 48, 40, 55, 50, 60],
     },
     {
       name: "series2",
+      data: [12, 20, 15, 26, 22, 30, 25, 35, 25],
+    },
+  ];
+
+  let userOverviewDonutChartOptionsTwo = {
+    colors: ["#FF9F29", "#487FFF", "#45B369", "#9935FE"],
+    labels: ["Purchase", "Sales", "Expense", "Gross Profit"],
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "donut",
+      height: 270,
+      sparkline: {
+        enabled: true, // Remove whitespace
+      },
+      margin: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+      padding: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+    },
+    stroke: {
+      width: 0,
+    },
+    dataLabels: {
+      enabled: true,
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+  };
+
+  let userOverviewDonutChartSeriesTwo = [30, 30, 20, 20];
+
+  let purchaseSaleChartOptions = {
+    colors: ["#45B369", "#FF9F29"],
+    labels: ["Active", "New", "Total"],
+
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "bar",
+      height: 260,
+      toolbar: {
+        show: false,
+      },
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 4, // Use a number for dashed style
+      position: "back",
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        columnWidth: 8,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    states: {
+      hover: {
+        filter: {
+          type: "none",
+        },
+      },
+    },
+    stroke: {
+      show: true,
+      width: 0,
+      colors: ["transparent"],
+    },
+    xaxis: {
+      categories: ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"],
+    },
+    fill: {
+      opacity: 1,
+      width: 18,
+    },
+  };
+
+  let purchaseSaleChartSeries = [
+    {
+      name: "Net Profit",
+      data: [44, 100, 40, 56, 30, 58, 50],
+    },
+    {
+      name: "Free Cash",
+      data: [60, 120, 60, 90, 50, 95, 90],
+    },
+  ];
+
+  let balanceStatisticsOptions = {
+    colors: ["#487FFF", "#FF9F29"],
+    labels: ["Active", "New", "Total"],
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "bar",
+      height: 250,
+      toolbar: {
+        show: false,
+      },
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 4, // Use a number for dashed style
+      position: "back",
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        columnWidth: 10,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ["transparent"],
+    },
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+    },
+    yaxis: {
+      categories: [
+        "0",
+        "5000",
+        "10,000",
+        "20,000",
+        "30,000",
+        "50,000",
+        "60,000",
+        "60,000",
+        "70,000",
+        "80,000",
+        "90,000",
+        "100,000",
+      ],
+    },
+    fill: {
+      opacity: 1,
+      width: 18,
+    },
+  };
+
+  let balanceStatisticsSeries = [
+    {
+      name: "Net Profit",
+      data: [
+        20000, 16000, 14000, 25000, 45000, 18000, 28000, 11000, 26000, 48000,
+        18000, 22000,
+      ],
+    },
+    {
+      name: "Revenue",
+      data: [
+        15000, 18000, 19000, 20000, 35000, 20000, 18000, 13000, 18000, 38000,
+        14000, 16000,
+      ],
+    },
+  ];
+
+  let expenseStatisticsOptions = {
+    chart: {
+      height: 240,
+      type: "pie",
+    },
+    labels: ["Entertainment", "Bill Expense", "Others", "Investment"],
+    colors: ["#02BCAF", "#F0437D", "#1C52F6", "#43DCFF"],
+    legend: {
+      show: true,
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+  };
+
+  let expenseStatisticsSeries = [30, 30, 30, 30];
+
+  let SemiCircleGaugeTwoOption = {
+    chart: {
+      type: "radialBar",
+      sparkline: {
+        enabled: true,
+      },
+      toolbar: {
+        show: false,
+      },
+    },
+    plotOptions: {
+      radialBar: {
+        offsetY: -24,
+        offsetX: -14,
+        startAngle: -90,
+        endAngle: 90,
+        track: {
+          background: "#E3E6E9",
+          strokeWidth: "70%",
+        },
+        hollow: {
+          size: "70%",
+        },
+        dataLabels: {
+          show: false,
+          value: {
+            fontSize: "22px",
+            fontWeight: 600,
+            color: "#487FFF",
+            offsetY: 16,
+          },
+        },
+      },
+    },
+    fill: {
+      type: "gradient",
+      colors: ["#9DBAFF"],
+      gradient: {
+        shade: "dark",
+        type: "horizontal",
+        shadeIntensity: 0.5,
+        gradientToColors: ["#487FFF"],
+        inverseColors: true,
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 100],
+      },
+    },
+    stroke: {
+      lineCap: "round",
+    },
+  };
+
+  let BookingStatisticsOneSeries = [
+    {
+      name: "Booking",
+      data: [6200, 5200, 4200, 3200, 1200],
+    },
+  ];
+
+  const BookingStatisticsOneSeriesOptions = {
+    chart: {
+      type: "bar",
+      height: 270,
+      toolbar: {
+        show: false,
+      },
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        horizontal: true,
+        distributed: true,
+        barHeight: "22px",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    grid: {
+      show: true,
+      borderColor: "#ddd",
+      strokeDashArray: 0,
+      position: "back",
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: false,
+        },
+      },
+    },
+    xaxis: {
+      categories: ["Booking", "Pending", "Finished", "Canceled", "Refunded"],
+      labels: {
+        formatter: function (value) {
+          return (value / 1000).toFixed(0) + "k";
+        },
+      },
+    },
+    legend: {
+      show: false,
+    },
+    fill: {
+      type: "gradient",
+      gradient: {
+        shade: "light",
+        type: "horizontal",
+        shadeIntensity: 0.5,
+        gradientToColors: [
+          "#C98BFF",
+          "#FFDC90",
+          "#94FF9B",
+          "#FFAC89",
+          "#A3E2FE",
+        ],
+        inverseColors: false,
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 100],
+      },
+    },
+    colors: ["#8501F8", "#FF9F29", "#00D40E", "#F84B01", "#2FBCFC"],
+  };
+
+  const EarningStatisticsOneSeries = [
+    {
+      name: "Income",
+      data: [48, 35, 55, 32, 48, 30, 55, 50, 57],
+    },
+    {
+      name: "Expense",
       data: [12, 20, 15, 26, 22, 60, 40, 48, 25],
     },
   ];
 
+  const EarningStatisticsOneOptions = {
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "area",
+      height: 200,
+      toolbar: {
+        show: false,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+      width: 3,
+      colors: ["#487FFF", "#FF9F29"],
+      lineCap: "round",
+    },
+    grid: {
+      borderColor: "#D1D5DB",
+      strokeDashArray: 1,
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: true,
+        },
+      },
+    },
+    colors: ["#487FFF", "#FF9F29"],
+    fill: {
+      type: "gradient",
+      gradient: {
+        shade: "light",
+        type: "vertical",
+        shadeIntensity: 0.5,
+        gradientToColors: [undefined, `${"#FF9F29"}00`],
+        opacityFrom: [0, 0],
+        opacityTo: [0, 0],
+        stops: [0, 100],
+      },
+    },
+    markers: {
+      colors: ["#487FFF", "#FF9F29"],
+      strokeWidth: 3,
+      size: 0,
+      hover: {
+        size: 10,
+      },
+    },
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+      labels: {
+        show: false,
+        style: {
+          fontSize: "14px",
+        },
+      },
+      tooltip: {
+        enabled: false,
+      },
+    },
+    yaxis: {
+      labels: {
+        formatter: (value) => "$" + value + "k",
+        style: {
+          fontSize: "14px",
+        },
+      },
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  };
+
+  const TaskSummaryOneSeries = [
+    {
+      name: "series1",
+      data: [48, 35, 55, 32, 48, 30, 55, 50, 57],
+    },
+  ];
+
+  const TaskSummaryOneOptions = {
+    chart: {
+      type: "area",
+      width: 466,
+      height: 86,
+      toolbar: {
+        show: false,
+      },
+      dropShadow: {
+        enabled: false,
+      },
+    },
+    legend: {
+      show: false,
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+      width: 3,
+      colors: ["#487FFF"],
+    },
+    fill: {
+      type: "solid",
+      opacity: 0,
+    },
+    grid: {
+      show: false,
+    },
+    markers: {
+      colors: ["#487FFF"],
+      strokeWidth: 3,
+      size: 0,
+      hover: {
+        size: 10,
+      },
+    },
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+      labels: {
+        show: false,
+      },
+      tooltip: {
+        enabled: false,
+      },
+    },
+    yaxis: {
+      labels: {
+        show: false,
+      },
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  };
+
+  const TicketPriorityOneSeries = [
+    {
+      name: "Ticket",
+      data: [6200, 5200, 4200, 3200],
+    },
+  ];
+  const TicketPriorityOneOptions = {
+    chart: {
+      type: "bar",
+      height: 270,
+      toolbar: {
+        show: false,
+      },
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        horizontal: true,
+        distributed: true,
+        barHeight: "22px",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    grid: {
+      borderColor: "#ddd",
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: false,
+        },
+      },
+    },
+    xaxis: {
+      categories: ["High", "Medium", "Low", "Urgent"],
+      labels: {
+        formatter: (value) => (value / 1000).toFixed(0) + "k",
+      },
+    },
+    legend: {
+      show: false,
+    },
+    fill: {
+      type: "gradient",
+      gradient: {
+        shade: "light",
+        type: "horizontal",
+        shadeIntensity: 0.5,
+        gradientToColors: ["#C98BFF", "#FFDC90", "#94FF9B", "#FFAC89"],
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 100],
+      },
+    },
+    colors: ["#8501F8", "#FF9F29", "#00D40E", "#F84B01"],
+  };
+
+  const TicketStatusOneSeries = [20, 22, 28, 10];
+
+  const TicketStatusOneOptions = {
+    chart: {
+      type: "polarArea",
+      height: 264,
+    },
+    labels: ["Product 1", "Product 2", "Product 3", "Product 4"],
+    colors: ["#487FFF", "#FF9F29", "#9935FE", "#EF4A00"],
+    stroke: {
+      colors: ["#487FFF", "#FF9F29", "#9935FE", "#EF4A00"],
+    },
+    fill: {
+      opacity: 0.8,
+    },
+    legend: {
+      show: false,
+      position: "bottom",
+      horizontalAlign: "center",
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+  };
+
+  const PendingVsSolvedTicketsSeries = [
+    {
+      name: "Pending",
+      data: [480, 350, 550, 320, 480, 300, 550, 500, 570],
+    },
+    {
+      name: "Solved",
+      data: [120, 200, 150, 260, 220, 600, 400, 480, 250],
+    },
+  ];
+
+  const PendingVsSolvedTicketsOptions = {
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "area",
+      height: 200,
+      toolbar: {
+        show: false,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+      width: 3,
+      colors: ["#45B369", "#FF9F29"],
+      lineCap: "round",
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 1,
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: true,
+        },
+      },
+      padding: {
+        top: -20,
+        bottom: -10,
+      },
+    },
+    colors: ["#45B369", "#FF9F29"],
+    fill: {
+      type: "gradient",
+      gradient: {
+        shade: "light",
+        type: "vertical",
+        shadeIntensity: 0.5,
+        gradientToColors: [undefined, `${"#FF9F29"}00`],
+        inverseColors: false,
+        opacityFrom: [0.4, 0.6],
+        opacityTo: [0.3, 0.3],
+        stops: [0, 100],
+      },
+    },
+    markers: {
+      colors: ["#45B369", "#FF9F29"],
+      strokeWidth: 3,
+      size: 0,
+      hover: {
+        size: 10,
+      },
+    },
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+      labels: {
+        show: false,
+        style: {
+          fontSize: "14px",
+        },
+      },
+      tooltip: {
+        enabled: false,
+      },
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  };
+  const ResponseTimeSeries = [75];
+
+  const ResponseTimeOptions = {
+    chart: {
+      width: 400,
+      height: 300,
+      type: "radialBar",
+      sparkline: {
+        enabled: true,
+      },
+      toolbar: {
+        show: false,
+      },
+    },
+
+    plotOptions: {
+      radialBar: {
+        offsetY: -24,
+        offsetX: -14,
+        startAngle: -90,
+        endAngle: 90,
+
+        track: {
+          background: "#E3E6E9",
+          strokeWidth: "70%",
+        },
+
+        hollow: {
+          size: "70%",
+        },
+
+        dataLabels: {
+          show: false,
+          value: {
+            fontSize: "22px",
+            fontWeight: 600,
+            color: "#487FFF",
+            offsetY: 16,
+          },
+        },
+      },
+    },
+
+    fill: {
+      type: "gradient",
+      colors: ["#9DBAFF"],
+      gradient: {
+        shade: "dark",
+        type: "horizontal",
+        shadeIntensity: 0.5,
+        gradientToColors: ["#487FFF"],
+        inverseColors: true,
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 100],
+      },
+    },
+
+    stroke: {
+      lineCap: "round",
+    },
+  };
+
+  const AudienceStatsSeries = [
+    {
+      name: "Net Profit",
+      data: [44, 100, 40, 56, 30, 58, 50, 44, 100, 40, 56, 30],
+    },
+    {
+      name: "Revenue",
+      data: [90, 140, 80, 125, 70, 140, 110, 90, 140, 80, 125, 70],
+    },
+    {
+      name: "Free Cash",
+      data: [60, 120, 60, 90, 50, 95, 90, 60, 120, 60, 90, 50],
+    },
+  ];
+
+  const AudienceStatsOptions = {
+    chart: {
+      type: "bar",
+      height: 300,
+      toolbar: {
+        show: false,
+      },
+    },
+
+    colors: ["#E4F1FF", "#E4F1FF", "#E4F1FF"],
+
+    labels: ["Active", "New", "Total"],
+
+    legend: {
+      show: false,
+    },
+
+    grid: {
+      borderColor: "#00000000",
+      strokeDashArray: 4,
+      position: "back",
+    },
+
+    plotOptions: {
+      bar: {
+        borderRadius: 2,
+        columnWidth: "70%",
+        borderRadiusApplication: "end",
+      },
+    },
+
+    dataLabels: {
+      enabled: false,
+    },
+
+    states: {
+      hover: {
+        filter: {
+          type: "none",
+        },
+      },
+    },
+
+    stroke: {
+      show: true,
+      width: 4,
+      colors: ["transparent"],
+    },
+
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+    },
+
+    yaxis: {
+      labels: {
+        formatter: (value) => "$" + value + "k",
+        style: {
+          fontSize: "14px",
+        },
+      },
+    },
+
+    fill: {
+      opacity: 1,
+    },
+  };
+
+  const EarningsOverviewSeries = [
+    {
+      name: "series1",
+      data: [6, 20, 15, 48, 28, 55, 28, 52, 25, 32, 15, 25],
+    },
+  ];
+  const EarningsOverviewOptions = {
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "area",
+      height: 200,
+      toolbar: {
+        show: false,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+      width: 0,
+      colors: ["#98B6FF"],
+      lineCap: "round",
+    },
+    grid: {
+      borderColor: "#D1D5DB",
+      strokeDashArray: 1,
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: true,
+        },
+      },
+    },
+    colors: ["#98B6FF"],
+    fill: {
+      type: "gradient",
+      gradient: {
+        shade: "light",
+        type: "vertical",
+        shadeIntensity: 0.5,
+        gradientToColors: [`${"#6593FF"}`],
+        inverseColors: false,
+        opacityFrom: 1,
+        opacityTo: 0.4,
+        stops: [0, 100],
+      },
+    },
+    markers: {
+      colors: ["#98B6FF"],
+      strokeWidth: 2,
+      size: 0,
+      hover: {
+        size: 8,
+      },
+    },
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+      labels: {
+        show: false,
+        style: {
+          fontSize: "14px",
+        },
+      },
+      tooltip: {
+        enabled: false,
+      },
+    },
+    yaxis: {
+      labels: {
+        formatter: (value) => "$" + value + "k",
+        style: {
+          fontSize: "14px",
+        },
+      },
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  };
+
+  const TopCategoriesSeries = [40, 87, 87, 30, 50];
+
+  const TopCategoriesOptions = {
+    labels: [
+      "Health",
+      "Business",
+      "Lifestyle",
+      "Entertainment",
+      "UI/UX Design",
+    ],
+    colors: ["#FF9F29", "#487FFF", "#EF4A00", "#9935FE", "#45B369"],
+
+    legend: {
+      show: false,
+    },
+
+    chart: {
+      type: "donut",
+      height: 270,
+      sparkline: {
+        enabled: true,
+      },
+    },
+
+    stroke: {
+      width: 0,
+    },
+
+    dataLabels: {
+      enabled: false,
+    },
+
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+  };
+
+  const AverageEarningsOneSeries = [
+    {
+      name: "Income",
+      data: [48, 35, 55, 32, 48, 30, 55, 50, 57],
+    },
+    {
+      name: "Expense",
+      data: [12, 20, 15, 26, 22, 60, 40, 48, 25],
+    },
+  ];
+
+  const AverageEarningsOneOptions = {
+    chart: {
+      type: "line",
+      height: 270,
+      toolbar: {
+        show: false,
+      },
+    },
+    legend: {
+      show: false,
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+      width: 3,
+      colors: ["#487FFF", "#FF9F29"],
+      lineCap: "round",
+    },
+    grid: {
+      borderColor: "#D1D5DB",
+      strokeDashArray: 1,
+      xaxis: { lines: { show: false } },
+      yaxis: { lines: { show: true } },
+      padding: { top: -20, right: 0, bottom: -10, left: 0 },
+    },
+    colors: ["#487FFF", "#FF9F29"],
+    markers: {
+      colors: ["#487FFF", "#FF9F29"],
+      strokeWidth: 3,
+      size: 0,
+      hover: { size: 10 },
+    },
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+      labels: {
+        show: false,
+        style: { fontSize: "14px" },
+        formatter: (value) => value,
+      },
+      tooltip: { enabled: false },
+    },
+    yaxis: {
+      labels: {
+        formatter: (value) => "$" + value + "k",
+        style: { fontSize: "14px" },
+      },
+    },
+    tooltip: {
+      x: { format: "dd/MM/yy HH:mm" },
+    },
+  };
+
+  const ProjectAnalysisSeries = [
+    {
+      name: "Net Profit",
+      data: [44, 100, 40, 56, 30, 58, 50],
+    },
+    {
+      name: "Revenue",
+      data: [90, 140, 80, 125, 70, 140, 110],
+    },
+    {
+      name: "Free Cash",
+      data: [60, 120, 60, 90, 50, 95, 90],
+    },
+  ];
+
+  const ProjectAnalysisOptions = {
+    colors: ["#45B369", "#FF9F29", "#9935FE"],
+    labels: ["Active", "New", "Total"],
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "bar",
+      height: 350,
+      toolbar: {
+        show: false,
+      },
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 4,
+      position: "back",
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        columnWidth: "18%", // ApexCharts accepts % string for columnWidth
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    states: {
+      hover: {
+        filter: {
+          type: "none",
+        },
+      },
+    },
+    stroke: {
+      show: true,
+      width: 0,
+      colors: ["transparent"],
+    },
+    xaxis: {
+      categories: ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"],
+    },
+    yaxis: {
+      // yaxis does not have `categories`, use labels or min/max instead
+      labels: {
+        formatter: function (val) {
+          return val.toLocaleString();
+        },
+      },
+    },
+    fill: {
+      opacity: 1,
+    },
+  };
+  const TeamMembersOneSeries = [40, 87, 87, 30];
+
+  const TeamMembersOneOptions = {
+    chart: {
+      type: "donut",
+      height: 270,
+      sparkline: {
+        enabled: true, // remove extra whitespace
+      },
+      margin: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+      padding: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+    },
+    colors: ["#dc3545", "#ff9f29", "#8252e9", "#144bd6"],
+    labels: ["Health", "Business", "Lifestyle", "Entertainment"],
+    legend: {
+      show: false,
+    },
+    stroke: {
+      width: 2,
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+  };
+
+  const AgentAvgEarningsSeries = [
+    {
+      name: "Sales",
+      data: [
+        { x: "Sun", y: 85000 },
+        { x: "Mon", y: 70000 },
+        { x: "Tue", y: 40000 },
+        { x: "Wed", y: 50000 },
+        { x: "Thu", y: 60000 },
+        { x: "Fri", y: 50000 },
+        { x: "Sat", y: 40000 },
+      ],
+    },
+  ];
+
+  const AgentAvgEarningsOptions = {
+    chart: {
+      type: "bar",
+      height: 310,
+      toolbar: { show: false },
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 8,
+        horizontal: false,
+        columnWidth: "30%",
+        endingShape: "rounded",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    fill: {
+      type: "gradient",
+      colors: ["#487FFF"],
+      gradient: {
+        shade: "light",
+        type: "vertical",
+        shadeIntensity: 0.5,
+        gradientToColors: ["#487FFF"],
+        inverseColors: false,
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 100],
+      },
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 4,
+      position: "back",
+    },
+    xaxis: {
+      type: "category",
+      categories: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    },
+    yaxis: {
+      labels: {
+        formatter: (value) => (value / 1000).toFixed(0) + "k",
+      },
+    },
+    tooltip: {
+      y: {
+        formatter: (value) => value / 1000 + "k",
+      },
+    },
+  };
+
+  const OverallCallsVolumeSeries = [
+    {
+      name: "Income",
+      data: [48, 35, 55, 32, 48, 30, 55, 50, 57],
+    },
+    {
+      name: "Expense",
+      data: [12, 20, 15, 26, 22, 60, 40, 48, 25],
+    },
+  ];
+
+  const OverallCallsVolumeOptions = {
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "area",
+      height: 270,
+      toolbar: {
+        show: false,
+      },
+      padding: {
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+      width: 3,
+      colors: ["#487FFF", "#FF9F29"],
+      lineCap: "round",
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 1,
+      xaxis: { lines: { show: false } },
+      yaxis: { lines: { show: true } },
+      row: { colors: undefined, opacity: 0.5 },
+      column: { colors: undefined, opacity: 0.5 },
+      padding: { top: -20, right: 0, bottom: -10, left: 0 },
+    },
+    colors: ["#487FFF", "#FF9F29"],
+    markers: {
+      colors: ["#487FFF", "#FF9F29"],
+      strokeWidth: 3,
+      size: 0,
+      hover: { size: 10 },
+    },
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+      labels: {
+        show: false,
+        formatter: (value) => value,
+        style: { fontSize: "14px" },
+      },
+      tooltip: { enabled: false },
+    },
+    yaxis: {
+      labels: {
+        formatter: (value) => "$" + value + "k",
+        style: { fontSize: "14px" },
+      },
+    },
+    tooltip: {
+      x: { format: "dd/MM/yy HH:mm" },
+    },
+  };
+
+  const ReasonForCallsSeries = [
+    {
+      name: "Ticket",
+      data: [6200, 5200, 4200, 3200, 1500],
+    },
+  ];
+
+  const ReasonForCallsOptions = {
+    chart: {
+      type: "bar",
+      height: 360,
+      toolbar: {
+        show: false,
+      },
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        horizontal: true,
+        distributed: true,
+        barHeight: "22px",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    grid: {
+      show: true,
+      borderColor: "#ddd",
+      strokeDashArray: 0,
+      xaxis: { lines: { show: false } },
+      yaxis: { lines: { show: false } },
+    },
+    xaxis: {
+      categories: [
+        "Service Problems",
+        "Technical Issues",
+        "Payment Issue",
+        "New Customer",
+        "Product Problems",
+      ],
+      labels: {
+        formatter: function (value) {
+          return (value / 1000).toFixed(0) + "k";
+        },
+      },
+    },
+    legend: {
+      show: false,
+    },
+    fill: {
+      type: "gradient",
+      gradient: {
+        shade: "light",
+        type: "horizontal",
+        shadeIntensity: 0.5,
+        gradientToColors: [
+          "#C98BFF",
+          "#FFDC90",
+          "#94FF9B",
+          "#FFAC89",
+          "#89C0FF",
+        ],
+        inverseColors: false,
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 100],
+      },
+    },
+    colors: ["#8501F8", "#FF9F29", "#00D40E", "#F84B01", "#1101F8"],
+  };
+
+  const totalUsersChartSeries = [
+    {
+      name: "This Day",
+      data: [4, 18, 13, 40, 30, 50, 30, 60, 40, 75, 45, 90],
+    },
+  ];
+  const totalUsersChartOptions = {
+    chart: {
+      type: "area",
+      height: 64,
+      sparkline: {
+        enabled: true,
+      },
+      toolbar: {
+        show: false,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+      width: 2,
+      colors: ["#487FFF"],
+      lineCap: "round",
+    },
+    grid: {
+      show: true,
+      borderColor: "red",
+      xaxis: {
+        lines: { show: false },
+      },
+      yaxis: {
+        lines: { show: false },
+      },
+      padding: {
+        top: -4,
+        bottom: -6,
+      },
+    },
+    colors: ["#487FFF"],
+    fill: {
+      type: "gradient",
+      gradient: {
+        shade: "light",
+        type: "vertical",
+        shadeIntensity: 0.5,
+        gradientToColors: [`${"#487FFF"}00`],
+        opacityFrom: 0.6,
+        opacityTo: 0.3,
+        stops: [0, 100],
+      },
+    },
+    markers: {
+      colors: ["#487FFF"],
+      strokeWidth: 3,
+      size: 0,
+      hover: {
+        size: 10,
+      },
+    },
+    xaxis: {
+      labels: { show: false },
+      axisBorder: { show: false },
+      axisTicks: { show: false },
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+    },
+    yaxis: {
+      labels: { show: false },
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  };
+  const totalOrderChartSeries = [
+    {
+      name: "This Day",
+      data: [4, 18, 13, 40, 30, 50, 30, 60, 40, 75, 45, 90],
+    },
+  ];
+  const totalOrderChartOptions = {
+    chart: {
+      type: "area",
+      height: 64,
+      sparkline: {
+        enabled: true,
+      },
+      toolbar: {
+        show: false,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+      width: 2,
+      colors: ["#FF9F29"],
+      lineCap: "round",
+    },
+    grid: {
+      show: true,
+      borderColor: "red",
+      xaxis: {
+        lines: { show: false },
+      },
+      yaxis: {
+        lines: { show: false },
+      },
+      padding: {
+        top: -4,
+        bottom: -6,
+      },
+    },
+    colors: ["#FF9F29"],
+    fill: {
+      type: "gradient",
+      gradient: {
+        shade: "light",
+        type: "vertical",
+        shadeIntensity: 0.5,
+        gradientToColors: [`${"#FF9F29"}00`],
+        opacityFrom: 0.6,
+        opacityTo: 0.3,
+        stops: [0, 100],
+      },
+    },
+    markers: {
+      colors: ["#FF9F29"],
+      strokeWidth: 3,
+      size: 0,
+      hover: {
+        size: 10,
+      },
+    },
+    xaxis: {
+      labels: { show: false },
+      axisBorder: { show: false },
+      axisTicks: { show: false },
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+    },
+    yaxis: {
+      labels: { show: false },
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  };
+
+  const upDownBarchartSeries = [
+    {
+      name: "Income",
+      data: [44, 42, 57, 86, 58, 55, 70, 44, 42, 57, 86, 58, 55, 70],
+    },
+    {
+      name: "Expenses",
+      data: [
+        -34, -22, -37, -56, -21, -35, -60, -34, -22, -37, -56, -21, -35, -60,
+      ],
+    },
+  ];
+
+  const upDownBarchartOptions = {
+    chart: {
+      stacked: true,
+      type: "bar",
+      height: 64,
+      fontFamily: "Poppins, sans-serif",
+      toolbar: {
+        show: false,
+      },
+      sparkline: {
+        enabled: true,
+      },
+    },
+
+    colors: ["#9935fe26", "#9935FE"],
+
+    plotOptions: {
+      bar: {
+        columnWidth: "8",
+        borderRadius: 2,
+        borderRadiusWhenStacked: "all",
+      },
+    },
+
+    stroke: {
+      width: [5, 5],
+    },
+
+    dataLabels: {
+      enabled: false,
+    },
+
+    legend: {
+      show: false,
+    },
+
+    yaxis: {
+      show: false,
+      labels: {
+        formatter: (y) => y.toFixed(0),
+      },
+    },
+
+    xaxis: {
+      categories: [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun",
+      ],
+      axisBorder: { show: false },
+      axisTicks: { show: false },
+      labels: { show: false },
+    },
+
+    tooltip: {
+      enabled: true,
+      shared: true,
+      intersect: false,
+      theme: "dark",
+      x: {
+        show: false,
+      },
+    },
+  };
+  const orderValueSeries = [
+    {
+      name: "Net Profit",
+      data: [
+        20000, 16000, 14000, 25000, 45000, 18000, 28000, 11000, 26000, 48000,
+        18000, 22000,
+      ],
+    },
+  ];
+
+  const orderValueOptions = {
+    chart: {
+      type: "bar",
+      height: 74,
+      toolbar: {
+        show: false,
+      },
+      sparkline: {
+        enabled: true, // Remove whitespace
+      },
+    },
+    colors: ["#22c55e"],
+    legend: {
+      show: false,
+    },
+    grid: {
+      show: true,
+      borderColor: "#ff000000",
+      strokeDashArray: 4,
+      position: "back",
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 6,
+        columnWidth: "16px",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ["transparent"],
+    },
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+      axisBorder: { show: false },
+      axisTicks: { show: false },
+      labels: { show: false },
+    },
+    yaxis: {
+      categories: [
+        "0",
+        "5000",
+        "10,000",
+        "20,000",
+        "30,000",
+        "50,000",
+        "60,000",
+        "70,000",
+        "80,000",
+        "90,000",
+        "100,000",
+      ],
+      axisBorder: { show: false },
+      axisTicks: { show: false },
+      labels: { show: false },
+    },
+    fill: {
+      opacity: 1,
+    },
+  };
+
+  const DailyEarningsSeries = [
+    {
+      name: "Sales",
+      data: [
+        { x: "Jan", y: 85000 },
+        { x: "Feb", y: 70000 },
+        { x: "Mar", y: 40000 },
+        { x: "Apr", y: 50000 },
+        { x: "May", y: 60000 },
+        { x: "Jun", y: 50000 },
+        { x: "Jul", y: 40000 },
+        { x: "Aug", y: 50000 },
+        { x: "Sep", y: 40000 },
+        { x: "Oct", y: 60000 },
+        { x: "Nov", y: 30000 },
+        { x: "Dec", y: 50000 },
+      ],
+    },
+  ];
+
+  const DailyEarningsOptions = {
+    chart: {
+      type: "bar",
+      height: 240,
+      toolbar: {
+        show: false,
+      },
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        horizontal: false,
+        columnWidth: "23%",
+        endingShape: "rounded",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    fill: {
+      type: "gradient",
+      gradient: {
+        shade: "light",
+        type: "vertical",
+        shadeIntensity: 0.5,
+        gradientToColors: ["#487FFF"],
+        inverseColors: false,
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 100],
+      },
+      colors: ["#487FFF"],
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 4,
+      position: "back",
+    },
+    xaxis: {
+      type: "category",
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+    },
+    yaxis: {
+      labels: {
+        formatter: (value) => (value / 1000).toFixed(0) + "k",
+      },
+    },
+    tooltip: {
+      y: {
+        formatter: (value) => value / 1000 + "k",
+      },
+    },
+  };
+
+  const UserTrafficSeries = [
+    {
+      data: [
+        [1327359600000, 30.95],
+        [1327446000000, 31.34],
+        [1327532400000, 31.18],
+        [1327618800000, 31.05],
+        [1327878000000, 31.0],
+        [1327964400000, 30.95],
+        [1328050800000, 31.24],
+        [1328137200000, 31.29],
+        [1328223600000, 31.85],
+        [1328482800000, 31.86],
+        [1328569200000, 32.28],
+        [1328655600000, 32.1],
+        [1328742000000, 32.65],
+        [1328828400000, 32.21],
+        [1329087600000, 32.35],
+        [1329174000000, 32.44],
+        [1329260400000, 32.46],
+        [1329346800000, 32.86],
+        [1329433200000, 32.75],
+        [1329778800000, 32.54],
+        [1329865200000, 32.33],
+        [1329951600000, 32.97],
+        [1330038000000, 33.41],
+        [1330297200000, 33.27],
+        [1330383600000, 33.27],
+        [1330470000000, 32.89],
+        [1330556400000, 33.1],
+        [1330642800000, 33.73],
+        [1330902000000, 33.22],
+        [1330988400000, 31.99],
+        [1331074800000, 32.41],
+        [1331161200000, 33.05],
+        [1331247600000, 33.64],
+        [1331506800000, 33.56],
+        [1331593200000, 34.22],
+        [1331679600000, 33.77],
+        [1331766000000, 34.17],
+        [1331852400000, 33.82],
+        [1332111600000, 34.51],
+        [1332198000000, 33.16],
+        [1332284400000, 33.56],
+        [1332370800000, 33.71],
+        [1332457200000, 33.81],
+        [1332712800000, 34.4],
+        [1332799200000, 34.63],
+        [1332885600000, 34.46],
+        [1332972000000, 34.48],
+        [1333058400000, 34.31],
+        [1333317600000, 34.7],
+        [1333404000000, 34.31],
+        [1333490400000, 33.46],
+        [1333576800000, 33.59],
+        [1333922400000, 33.22],
+        [1334008800000, 32.61],
+        [1334095200000, 33.01],
+        [1334181600000, 33.55],
+        [1334268000000, 33.18],
+        [1334527200000, 32.84],
+        [1334613600000, 33.84],
+        [1334700000000, 33.39],
+        [1334786400000, 32.91],
+        [1334872800000, 33.06],
+        [1335132000000, 32.62],
+        [1335218400000, 32.4],
+        [1335304800000, 33.13],
+        [1335391200000, 33.26],
+        [1335477600000, 33.58],
+        [1335736800000, 33.55],
+        [1335823200000, 33.77],
+        [1335909600000, 33.76],
+        [1335996000000, 33.32],
+        [1336082400000, 32.61],
+        [1336341600000, 32.52],
+        [1336428000000, 32.67],
+        [1336514400000, 32.52],
+        [1336600800000, 31.92],
+        [1336687200000, 32.2],
+        [1336946400000, 32.23],
+        [1337032800000, 32.33],
+        [1337119200000, 32.36],
+        [1337205600000, 32.01],
+        [1337292000000, 31.31],
+        [1337551200000, 32.01],
+        [1337637600000, 32.01],
+        [1337724000000, 32.18],
+        [1337810400000, 31.54],
+        [1337896800000, 31.6],
+        [1338242400000, 32.05],
+        [1338328800000, 31.29],
+        [1338415200000, 31.05],
+        [1338501600000, 29.82],
+        [1338760800000, 30.31],
+        [1338847200000, 30.7],
+        [1338933600000, 31.69],
+        [1339020000000, 31.32],
+        [1339106400000, 31.65],
+        [1339365600000, 31.13],
+        [1339452000000, 31.77],
+        [1339538400000, 31.79],
+        [1339624800000, 31.67],
+        [1339711200000, 32.39],
+        [1339970400000, 32.63],
+        [1340056800000, 32.89],
+        [1340143200000, 31.99],
+        [1340229600000, 31.23],
+        [1340316000000, 31.57],
+        [1340575200000, 30.84],
+        [1340661600000, 31.07],
+        [1340748000000, 31.41],
+        [1340834400000, 31.17],
+        [1340920800000, 32.37],
+        [1341180000000, 32.19],
+        [1341266400000, 32.51],
+        [1341439200000, 32.53],
+        [1341525600000, 31.37],
+        [1341784800000, 30.43],
+        [1341871200000, 30.44],
+        [1341957600000, 30.2],
+        [1342044000000, 30.14],
+        [1342130400000, 30.65],
+        [1342389600000, 30.4],
+        [1342476000000, 30.65],
+        [1342562400000, 31.43],
+        [1342648800000, 31.89],
+        [1342735200000, 31.38],
+        [1342994400000, 30.64],
+        [1343080800000, 30.02],
+        [1343167200000, 30.33],
+        [1343253600000, 30.95],
+        [1343340000000, 31.89],
+        [1343599200000, 31.01],
+        [1343685600000, 30.88],
+        [1343772000000, 30.69],
+        [1343858400000, 30.58],
+        [1343944800000, 32.02],
+        [1344204000000, 32.14],
+        [1344290400000, 32.37],
+        [1344376800000, 32.51],
+        [1344463200000, 32.65],
+        [1344549600000, 32.64],
+        [1344808800000, 32.27],
+        [1344895200000, 32.1],
+        [1344981600000, 32.91],
+        [1345068000000, 33.65],
+        [1345154400000, 33.8],
+        [1345413600000, 33.92],
+        [1345500000000, 33.75],
+        [1345586400000, 33.84],
+        [1345672800000, 33.5],
+        [1345759200000, 32.26],
+        [1346018400000, 32.32],
+        [1346104800000, 32.06],
+        [1346191200000, 31.96],
+        [1346277600000, 31.46],
+        [1346364000000, 31.27],
+        [1346709600000, 31.43],
+        [1346796000000, 32.26],
+        [1346882400000, 32.79],
+        [1346968800000, 32.46],
+        [1347228000000, 32.13],
+        [1347314400000, 32.43],
+        [1347400800000, 32.42],
+        [1347487200000, 32.81],
+        [1347573600000, 33.34],
+        [1347832800000, 33.41],
+        [1347919200000, 32.57],
+        [1348005600000, 33.12],
+        [1348092000000, 34.53],
+        [1348178400000, 33.83],
+        [1348437600000, 33.41],
+        [1348524000000, 32.9],
+        [1348610400000, 32.53],
+        [1348696800000, 32.8],
+        [1348783200000, 32.44],
+        [1349042400000, 32.62],
+        [1349128800000, 32.57],
+        [1349215200000, 32.6],
+        [1349301600000, 32.68],
+        [1349388000000, 32.47],
+        [1349647200000, 32.23],
+        [1349733600000, 31.68],
+        [1349820000000, 31.51],
+        [1349906400000, 31.78],
+        [1349992800000, 31.94],
+        [1350252000000, 32.33],
+        [1350338400000, 33.24],
+        [1350424800000, 33.44],
+        [1350511200000, 33.48],
+        [1350597600000, 33.24],
+        [1350856800000, 33.49],
+        [1350943200000, 33.31],
+        [1351029600000, 33.36],
+        [1351116000000, 33.4],
+        [1351202400000, 34.01],
+        [1351638000000, 34.02],
+        [1351724400000, 34.36],
+        [1351810800000, 34.39],
+        [1352070000000, 34.24],
+        [1352156400000, 34.39],
+        [1352242800000, 33.47],
+        [1352329200000, 32.98],
+        [1352415600000, 32.9],
+        [1352674800000, 32.7],
+        [1352761200000, 32.54],
+        [1352847600000, 32.23],
+        [1352934000000, 32.64],
+        [1353020400000, 32.65],
+        [1353279600000, 32.92],
+        [1353366000000, 32.64],
+        [1353452400000, 32.84],
+        [1353625200000, 33.4],
+        [1353884400000, 33.3],
+        [1353970800000, 33.18],
+        [1354057200000, 33.88],
+        [1354143600000, 34.09],
+        [1354230000000, 34.61],
+        [1354489200000, 34.7],
+        [1354575600000, 35.3],
+        [1354662000000, 35.4],
+        [1354748400000, 35.14],
+        [1354834800000, 35.48],
+        [1355094000000, 35.75],
+        [1355180400000, 35.54],
+        [1355266800000, 35.96],
+        [1355353200000, 35.53],
+        [1355439600000, 37.56],
+        [1355698800000, 37.42],
+        [1355785200000, 37.49],
+        [1355871600000, 38.09],
+        [1355958000000, 37.87],
+        [1356044400000, 37.71],
+        [1356303600000, 37.53],
+        [1356476400000, 37.55],
+        [1356562800000, 37.3],
+        [1356649200000, 36.9],
+        [1356908400000, 37.68],
+        [1357081200000, 38.34],
+        [1357167600000, 37.75],
+        [1357254000000, 38.13],
+        [1357513200000, 37.94],
+        [1357599600000, 38.14],
+        [1357686000000, 38.66],
+        [1357772400000, 38.62],
+        [1357858800000, 38.09],
+        [1358118000000, 38.16],
+        [1358204400000, 38.15],
+        [1358290800000, 37.88],
+        [1358377200000, 37.73],
+        [1358463600000, 37.98],
+        [1358809200000, 37.95],
+        [1358895600000, 38.25],
+        [1358982000000, 38.1],
+        [1359068400000, 38.32],
+        [1359327600000, 38.24],
+        [1359414000000, 38.52],
+        [1359500400000, 37.94],
+        [1359586800000, 37.83],
+        [1359673200000, 38.34],
+        [1359932400000, 38.1],
+        [1360018800000, 38.51],
+        [1360105200000, 38.4],
+        [1360191600000, 38.07],
+        [1360278000000, 39.12],
+        [1360537200000, 38.64],
+        [1360623600000, 38.89],
+        [1360710000000, 38.81],
+        [1360796400000, 38.61],
+        [1360882800000, 38.63],
+        [1361228400000, 38.99],
+        [1361314800000, 38.77],
+        [1361401200000, 38.34],
+        [1361487600000, 38.55],
+        [1361746800000, 38.11],
+        [1361833200000, 38.59],
+        [1361919600000, 39.6],
+      ],
+    },
+  ];
+
+  const UserTrafficOptions = {
+    chart: {
+      id: "area-datetime",
+      type: "area",
+      height: 250,
+      zoom: {
+        autoScaleYaxis: true,
+      },
+      toolbar: {
+        show: false,
+      },
+    },
+    annotations: {
+      yaxis: [
+        {
+          y: 30,
+          borderColor: "#999",
+          label: {
+            show: true,
+            text: "Support",
+            style: {
+              color: "#fff",
+              background: "#00E396",
+            },
+          },
+        },
+      ],
+      xaxis: [
+        {
+          x: new Date("14 Nov 2012").getTime(),
+          borderColor: "#999",
+          yAxisIndex: 0,
+          label: {
+            show: true,
+            text: "Rally",
+            style: {
+              color: "#fff",
+              background: "#775DD0",
+            },
+          },
+        },
+      ],
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    markers: {
+      size: 0,
+      style: "hollow",
+    },
+    xaxis: {
+      type: "datetime",
+      min: new Date("01 Mar 2012").getTime(),
+      tickAmount: 6,
+    },
+    tooltip: {
+      x: {
+        format: "dd MMM yyyy",
+      },
+    },
+    fill: {
+      type: "gradient",
+      gradient: {
+        shade: "light",
+        type: "vertical",
+        shadeIntensity: 1,
+        gradientToColors: ["#9935FE"],
+        inverseColors: false,
+        opacityFrom: 0.9,
+        opacityTo: 0.0,
+        stops: [0, 100],
+      },
+    },
+    stroke: {
+      curve: "straight",
+      width: 0,
+      colors: ["transparent"],
+    },
+  };
+
+  const UpgradeYourPlanTwoSeries = [300, 200, 500, 172];
+  const UpgradeYourPlanTwoOptions = {
+    chart: {
+      type: "donut",
+    },
+
+    labels: [
+      "Total Visitors",
+      "Registrations",
+      "Total Page Views",
+      "Subscriptions",
+    ],
+
+    colors: ["#487FFF", "#9935FE", "#FF9F29", "#45B369"],
+
+    legend: {
+      show: false,
+    },
+  };
+
+  const SalesFigureSeries = [
+    {
+      name: "Income",
+      data: [48, 35, 55, 32, 48, 30, 55, 50, 57],
+    },
+    {
+      name: "Expense",
+      data: [12, 20, 15, 26, 22, 60, 40, 48, 25],
+    },
+  ];
+
+  const SalesFigureOptions = {
+    legend: {
+      show: false,
+    },
+    chart: {
+      type: "area",
+      height: 340,
+      toolbar: {
+        show: false,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "stepline",
+      width: 2,
+      colors: ["#16a34a", "#FF9F29"],
+      lineCap: "round",
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 1,
+      xaxis: { lines: { show: false } },
+      yaxis: { lines: { show: true } },
+      row: { colors: undefined, opacity: 0.2 },
+      column: { colors: undefined, opacity: 0.2 },
+      padding: { top: -20, right: 0, bottom: -10, left: 0 },
+    },
+    colors: ["#16a34a", "#FF9F29"],
+    markers: {
+      colors: ["#16a34a", "#FF9F29"],
+      strokeWidth: 1,
+      size: 0,
+      hover: { size: 10 },
+    },
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+      labels: {
+        show: false,
+        formatter: (value) => value,
+        style: { fontSize: "14px" },
+      },
+      tooltip: { enabled: false },
+    },
+    yaxis: {
+      labels: {
+        formatter: (value) => "$" + value + "k",
+        style: { fontSize: "14px" },
+      },
+    },
+    tooltip: {
+      x: { format: "dd/MM/yy HH:mm" },
+    },
+  };
+
+  const DailySalesSeries = [
+    {
+      name: "This Day",
+      data: [18, 25, 20, 35, 25, 55, 45, 50, 40],
+    },
+  ];
+
+  const DailySalesOptions = {
+    chart: {
+      type: "area",
+      height: 360,
+      sparkline: {
+        enabled: false,
+      },
+      toolbar: {
+        show: false,
+      },
+      padding: {
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+      width: 4,
+      colors: ["#487fff"],
+      lineCap: "round",
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 1,
+      xaxis: {
+        lines: { show: false },
+      },
+      yaxis: {
+        lines: { show: true },
+      },
+      padding: {
+        top: -30,
+        right: 0,
+        bottom: -10,
+        left: 0,
+      },
+    },
+    colors: ["#487fff"],
+    fill: {
+      type: "gradient",
+      gradient: {
+        shade: "light",
+        type: "vertical",
+        shadeIntensity: 0.5,
+        gradientToColors: [`${"#487fff"}00`], // bottom transparent
+        inverseColors: false,
+        opacityFrom: 0.6,
+        opacityTo: 0.3,
+        stops: [0, 100],
+      },
+    },
+    markers: {
+      colors: ["#487fff"],
+      strokeWidth: 3,
+      size: 0,
+      hover: {
+        size: 10,
+      },
+    },
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+      labels: {
+        show: false,
+        style: {
+          fontSize: "14px",
+        },
+      },
+      tooltip: {
+        enabled: false,
+      },
+    },
+    yaxis: {
+      labels: {
+        show: false,
+      },
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  };
+  const CustomersStatisticsSeries = [500, 500];
+  const CustomersStatisticsOptions = {
+    chart: {
+      type: "donut",
+      height: 270,
+      sparkline: {
+        enabled: true, // Remove whitespace
+      },
+      margin: {
+        top: -100,
+        right: -100,
+        bottom: -100,
+        left: -100,
+      },
+      padding: {
+        top: -100,
+        right: -100,
+        bottom: -100,
+        left: -100,
+      },
+    },
+    colors: ["#487FFF", "#FF9F29"],
+    labels: ["Active", "New"],
+    legend: {
+      show: false,
+    },
+    stroke: {
+      width: 0,
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+    plotOptions: {
+      pie: {
+        startAngle: -90,
+        endAngle: 90,
+        offsetY: 10,
+        customScale: 0.8,
+        donut: {
+          size: "70%",
+          labels: {
+            show: true,
+            total: {
+              showAlways: true,
+              show: true,
+              label: "Total Customer",
+              // Uncomment if you want total calculation
+              // formatter: function (w) {
+              //   return w.globals.seriesTotals.reduce((a, b) => a + b, 0);
+              // }
+            },
+          },
+        },
+      },
+    },
+  };
+
+  const StatisticsInnerSeries = [300, 200, 500, 172];
+  const StatisticsInnerOptions = {
+    chart: {
+      type: "donut",
+      height: 240,
+      sparkline: {
+        enabled: true, // Remove whitespace
+      },
+      margin: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+      padding: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+      },
+    },
+    colors: ["#487FFF", "#9935FE", "#FF9F29", "#45B369"],
+    labels: [
+      "Total Visitors",
+      "Registrations",
+      "Total Page Views",
+      "Registrations",
+    ],
+    legend: {
+      show: false,
+    },
+    stroke: {
+      width: 0,
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+  };
+
+  const TotalRevenueSeries = [
+    {
+      name: "Net Profit",
+      data: [6, 16, 14, 25, 45, 18, 28, 16, 26, 48, 18, 22],
+    },
+    {
+      name: "Revenue",
+      data: [15, 18, 19, 30, 35, 12, 18, 13, 18, 38, 14, 16],
+    },
+  ];
+
+  const TotalRevenueOptions = {
+    chart: {
+      type: "bar",
+      height: 250,
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: ["#487FFF", "#FF9F29"],
+    labels: ["Active", "New", "Total"],
+    legend: {
+      show: false,
+    },
+    grid: {
+      show: true,
+      borderColor: "#D1D5DB",
+      strokeDashArray: 4,
+      position: "back",
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        columnWidth: "10%",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 15,
+      colors: ["transparent"],
+    },
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+    },
+    yaxis: {
+      labels: {
+        formatter: (value) => "$" + value + "k",
+        style: {
+          fontSize: "14px",
+        },
+      },
+    },
+    fill: {
+      opacity: 1,
+    },
+  };
+
+  const EarningsOverviewOneSeries = [
+    {
+      name: "series1",
+      data: [6, 20, 15, 48, 28, 55, 28, 52, 25, 32, 15, 25],
+    },
+  ];
+
+  const EarningsOverviewOneOptions = {
+    legend: { show: false },
+    chart: {
+      type: "area",
+      height: 230,
+      toolbar: { show: false },
+    },
+    dataLabels: { enabled: false },
+    stroke: {
+      curve: "smooth",
+      width: 0,
+      colors: ["#98B6FF", "#6593FF"],
+      lineCap: "round",
+    },
+    grid: {
+      borderColor: "#D1D5DB",
+      strokeDashArray: 1,
+      xaxis: { lines: { show: false } },
+      yaxis: { lines: { show: true } },
+      padding: { top: -20, right: 0, bottom: -10, left: 0 },
+    },
+    colors: ["#98B6FF", "#6593FF"],
+    fill: {
+      type: "gradient",
+      colors: ["#98B6FF", "#6593FF"],
+      gradient: {
+        shade: "light",
+        type: "vertical",
+        shadeIntensity: 0.5,
+        gradientToColors: [undefined, `${"#6593FF"}00`],
+        inverseColors: false,
+        opacityFrom: [1, 0.6],
+        opacityTo: [0.5, 0.4],
+        stops: [0, 100],
+      },
+    },
+    markers: {
+      colors: ["#98B6FF", "#6593FF"],
+      strokeWidth: 2,
+      size: 0,
+      hover: { size: 8 },
+    },
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+      labels: { show: true, style: { fontSize: "14px" } },
+      tooltip: { enabled: false },
+    },
+    yaxis: {
+      labels: {
+        formatter: (value) => "$" + value + "k",
+        style: { fontSize: "14px" },
+      },
+    },
+    tooltip: { x: { format: "dd/MM/yy HH:mm" } },
+  };
+
+  const salesFigureChartSeries = [
+    {
+      name: "Truck Cargo",
+      data: [44, 55, 41, 67, 22, 43, 21, 49, 44, 55, 41, 67],
+    },
+    {
+      name: "Ship Cargo",
+      data: [13, 23, 20, 8, 13, 27, 33, 12, 13, 23, 20, 8],
+    },
+    {
+      name: "Car Box",
+      data: [11, 17, 15, 15, 21, 14, 15, 13, 11, 17, 15, 15],
+    },
+  ];
+
+  const salesFigureChartOptions = {
+    chart: {
+      type: "bar",
+      height: 350,
+      stacked: true,
+      stackType: "100%",
+      toolbar: {
+        show: false,
+      },
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        horizontal: false,
+        columnWidth: "23%",
+        endingShape: "rounded",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          legend: {
+            position: "bottom",
+            offsetX: -10,
+            offsetY: 0,
+          },
+        },
+      },
+    ],
+    xaxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+    },
+    colors: ["#78D3F8", "#4F70FF", "#FF9F29"],
+    fill: {
+      opacity: 1,
+    },
+    legend: {
+      show: false,
+      position: "right",
+      offsetX: 0,
+      offsetY: 50,
+    },
+  };
+
+  const TopShippingMethodsSeries = [20, 22, 28, 10];
+
+  const TopShippingMethodsOptions = {
+    chart: {
+      type: "polarArea",
+      height: 250,
+    },
+    labels: ["Product 1", "Product 2", "Product 3", "Product 4"],
+    colors: ["#487FFF", "#FF9F29", "#9935FE", "#EF4A00"],
+    stroke: {
+      colors: ["#487FFF", "#FF9F29", "#9935FE", "#EF4A00"],
+    },
+    fill: {
+      opacity: 0.8,
+    },
+    legend: {
+      show: false,
+      position: "bottom",
+      horizontalAlign: "center",
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+  };
+
+  const ThisMonthOrdersSeries = [
+    {
+      name: "Actual",
+      data: [
+        {
+          x: "Jan",
+          y: 100,
+          goals: [
+            {
+              name: "Expected",
+              value: 103,
+              strokeHeight: 3,
+              strokeColor: "#487FFF",
+            },
+          ],
+        },
+        {
+          x: "Feb",
+          y: 452,
+          goals: [
+            {
+              name: "Expected",
+              value: 455,
+              strokeHeight: 3,
+              strokeColor: "#487FFF",
+            },
+          ],
+        },
+        {
+          x: "Mar",
+          y: 303,
+          goals: [
+            {
+              name: "Expected",
+              value: 306,
+              strokeHeight: 3,
+              strokeColor: "#487FFF",
+            },
+          ],
+        },
+        {
+          x: "Apr",
+          y: 503,
+          goals: [
+            {
+              name: "Expected",
+              value: 506,
+              strokeHeight: 3,
+              strokeColor: "#487FFF",
+            },
+          ],
+        },
+        {
+          x: "May",
+          y: 93,
+          goals: [
+            {
+              name: "Expected",
+              value: 96,
+              strokeHeight: 3,
+              strokeColor: "#487FFF",
+            },
+          ],
+        },
+        {
+          x: "Jun",
+          y: 302,
+          goals: [
+            {
+              name: "Expected",
+              value: 305,
+              strokeHeight: 3,
+              strokeColor: "#487FFF",
+            },
+          ],
+        },
+        {
+          x: "Jul",
+          y: 452,
+          goals: [
+            {
+              name: "Expected",
+              value: 455,
+              strokeHeight: 3,
+              strokeColor: "#487FFF",
+            },
+          ],
+        },
+        {
+          x: "Aug",
+          y: 153,
+          goals: [
+            {
+              name: "Expected",
+              value: 156,
+              strokeHeight: 3,
+              strokeColor: "#487FFF",
+            },
+          ],
+        },
+        {
+          x: "Sep",
+          y: 453,
+          goals: [
+            {
+              name: "Expected",
+              value: 456,
+              strokeHeight: 3,
+              strokeColor: "#487FFF",
+            },
+          ],
+        },
+        {
+          x: "Oct",
+          y: 103,
+          goals: [
+            {
+              name: "Expected",
+              value: 106,
+              strokeHeight: 3,
+              strokeColor: "#487FFF",
+            },
+          ],
+        },
+        {
+          x: "Nov",
+          y: 253,
+          goals: [
+            {
+              name: "Expected",
+              value: 256,
+              strokeHeight: 3,
+              strokeColor: "#487FFF",
+            },
+          ],
+        },
+        {
+          x: "Dec",
+          y: 153,
+          goals: [
+            {
+              name: "Expected",
+              value: 156,
+              strokeHeight: 3,
+              strokeColor: "#487FFF",
+            },
+          ],
+        },
+      ],
+    },
+  ];
+
+  const ThisMonthOrdersOptions = {
+    chart: {
+      height: 224,
+      type: "bar",
+      toolbar: {
+        show: false,
+      },
+    },
+    plotOptions: {
+      bar: {
+        columnWidth: "100%",
+      },
+    },
+    colors: ["#C3D5FF"],
+    dataLabels: {
+      enabled: false,
+    },
+    legend: {
+      show: false,
+      showForSingleSeries: true,
+      customLegendItems: ["Actual", "Expected"],
+      markers: {
+        fillColors: ["#C3D5FF", "#487FFF"],
+      },
+    },
+  };
+
   return {
+    ThisMonthOrdersSeries,
+    ThisMonthOrdersOptions,
+    TopShippingMethodsSeries,
+    TopShippingMethodsOptions,
+    salesFigureChartSeries,
+    salesFigureChartOptions,
+    EarningsOverviewOneSeries,
+    EarningsOverviewOneOptions,
+    TotalRevenueSeries,
+    TotalRevenueOptions,
+    StatisticsInnerSeries,
+    StatisticsInnerOptions,
+    CustomersStatisticsSeries,
+    CustomersStatisticsOptions,
+    DailySalesSeries,
+    DailySalesOptions,
+    SalesFigureSeries,
+    SalesFigureOptions,
+    UpgradeYourPlanTwoSeries,
+    UpgradeYourPlanTwoOptions,
+    UserTrafficSeries,
+    UserTrafficOptions,
+    DailyEarningsSeries,
+    DailyEarningsOptions,
+    orderValueSeries,
+    orderValueOptions,
+    upDownBarchartSeries,
+    upDownBarchartOptions,
+    totalOrderChartSeries,
+    totalOrderChartOptions,
+    totalUsersChartSeries,
+    totalUsersChartOptions,
+    ReasonForCallsSeries,
+    ReasonForCallsOptions,
+    OverallCallsVolumeSeries,
+    OverallCallsVolumeOptions,
+    AgentAvgEarningsSeries,
+    AgentAvgEarningsOptions,
+    TeamMembersOneSeries,
+    TeamMembersOneOptions,
+    ProjectAnalysisSeries,
+    ProjectAnalysisOptions,
+    AverageEarningsOneSeries,
+    AverageEarningsOneOptions,
+    TopCategoriesSeries,
+    TopCategoriesOptions,
+    EarningsOverviewSeries,
+    EarningsOverviewOptions,
+    AudienceStatsSeries,
+    AudienceStatsOptions,
+    ResponseTimeSeries,
+    ResponseTimeOptions,
+    PendingVsSolvedTicketsSeries,
+    PendingVsSolvedTicketsOptions,
+    TicketStatusOneSeries,
+    TicketStatusOneOptions,
+    TicketPriorityOneSeries,
+    TicketPriorityOneOptions,
     expenseStatisticsOptions,
     expenseStatisticsSeries,
     balanceStatisticsOptions,
@@ -5549,6 +8415,13 @@ const useReactApexChart = () => {
     gradientLineChartOptions,
     enrollmentChartOptions,
     enrollmentChartSeries,
+    SemiCircleGaugeTwoOption,
+    BookingStatisticsOneSeries,
+    BookingStatisticsOneSeriesOptions,
+    EarningStatisticsOneSeries,
+    EarningStatisticsOneOptions,
+    TaskSummaryOneSeries,
+    TaskSummaryOneOptions,
   };
 };
 

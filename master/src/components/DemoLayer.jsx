@@ -6989,7 +6989,7 @@ font-size: 52px !important;
                                         alt=''
                                     />
                                 </span>
-                                <h5 className='mb-4 counter-number'>7</h5>
+                                <h5 className='mb-4 counter-number'>20</h5>
                                 <span className='counter-item__text'>Awesome Dashboard</span>
                             </div>
                             <div className='counter-item text-center py-24 px-8'>
@@ -7009,7 +7009,7 @@ font-size: 52px !important;
                                         alt=''
                                     />
                                 </span>
-                                <h5 className='mb-4 counter-number'>80+</h5>
+                                <h5 className='mb-4 counter-number'>100+</h5>
                                 <span className='counter-item__text'>All Other Pages</span>
                             </div>
                             <div className='counter-item text-center py-24 px-8'>
@@ -7019,7 +7019,7 @@ font-size: 52px !important;
                                         alt=''
                                     />
                                 </span>
-                                <h5 className='mb-4 counter-number'>260+</h5>
+                                <h5 className='mb-4 counter-number'>300+</h5>
                                 <span className='counter-item__text'>Reusable Components</span>
                             </div>
                         </div>
